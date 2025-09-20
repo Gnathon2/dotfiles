@@ -193,7 +193,7 @@
     #jack.enable = true;
   };
 
-
+  services.upower.enable = true; # pour la batterie dans hyprpanel
   
   
 
