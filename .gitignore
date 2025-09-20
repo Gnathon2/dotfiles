@@ -6,6 +6,8 @@ fonds/
 btop/
 Code/
 dconf/
+discord/
+Electron/
 ensemble*/
 environment.d/
 ghostty/
@@ -13,9 +15,11 @@ gtk*/
 hypr*/
 !home-manager/hyprland
 kitty/
+neofetch/
 obsidian/
 pulse/
 ranger/
+spotify/
 systemd/
 Thunar
 xfce4/
