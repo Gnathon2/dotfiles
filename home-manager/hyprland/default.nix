@@ -5,6 +5,7 @@
   imports = [
     ./hyprpaper.nix
     # ./hyprpanel.nix
+    ./hyprdeco.nix
   ];
 
 
@@ -21,7 +22,7 @@
   ];
 
   
-  wayland.windowManager.hyprland.settings = {
+  wayland.windowManager.hyprland.settings =  {
     monitor = "eDP-1,prefferred, auto, 1";
     source = [
       "/home/hypruser/.config/hypr/hyprold.conf"
