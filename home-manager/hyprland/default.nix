@@ -24,6 +24,7 @@
   
   wayland.windowManager.hyprland.settings =  {
     monitor = "eDP-1,prefferred, auto, 1";
+
     source = [
       "/home/hypruser/.config/hypr/hyprold.conf"
     ];
@@ -41,10 +42,35 @@
       "4, horizontal, workspace"
     ];
 
+    dwindle = {
+      pseudotile = true;
+      preserve_split = true;
+    };
 
-    # gestures = {
-    #   workspace_swipe = "true";
-    #   workspace_swipe_fingers = 4;
-    # };
+    misc = {
+      vfr = true;
+    };
+    
+    master = {
+      new_status = "slave";
+      new_on_active = "after";
+      allow_small_split = "false";
+    };
+
+    input = {
+      kb_layout = "fr";
+      numlock_by_default = true;
+      follow_mouse = 1; #focus
+      sensitivity = -.2;
+      touchpad = {
+        scroll_factor = 0.2;
+        natural_scroll = true;
+      };
+    };
+
+    device = {
+      name = "steelseries-steelseries-rival-3";
+      sensitivity = -.8;
+    };
   };
 }
