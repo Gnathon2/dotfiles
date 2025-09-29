@@ -64,7 +64,7 @@
     };
     
     gesture = [
-      "4, horizontal, workspace"
+      
     ];
 
     dwindle = {
