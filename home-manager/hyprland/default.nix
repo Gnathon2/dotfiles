@@ -17,7 +17,7 @@
     # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
 
     # pkgs.hyprlandPlugins.hyprexpo
-    pkgs.hyprlandPlugins.hyprscrolling
+    
     pkgs.hyprlandPlugins.hyprwinwrap
 
   ];
@@ -29,7 +29,7 @@
     ];
 
     source = [
-      # "/home/hypruser/.config/hypr/hyprold.conf"
+      "/home/hypruser/.config/hypr/hyprbind.conf"
     ];
     
 
