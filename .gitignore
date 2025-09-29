@@ -13,8 +13,8 @@ ensemble*/
 environment.d/
 ghostty/
 gtk*/
-hypr*/
-!home-manager/hyprland
+hypr/
+hyprpanel/
 kitty/
 neofetch/
 obsidian/

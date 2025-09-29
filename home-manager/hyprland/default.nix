@@ -9,6 +9,7 @@
     ./hyprexpo.nix
     ./hyprwinwrap.nix 
     ./hypridle.nix
+    ./hyprbind
   ];
 
 
@@ -36,12 +37,12 @@
     
 
     exec-once = [
-      "hyprpaper & hyprlock"
+      # "hyprpaper & hyprlock"
       # "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprexpo.so'"
       # "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprscrolling.so'"
       # "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprwinwrap.so'"
       "hyprpanel"
-      "hypridle"
+      # "hypridle"
       # "systemctl --user start hyprpolkitagent"
     ];
 
