@@ -14,7 +14,7 @@
         path = "~/.config/fonds/cp.png";
         color = "0xFF0000FF";
         blur_size = 4;
-        blur_passez = 4;
+        blur_passes = 4;
         brightness = .8;
       };
       label = {
@@ -23,12 +23,12 @@
         color = "0xFFF7768E";
         halign = "center";
         valign = "center";
-        position = (0,20);
+        position = "0,20";
         font_size=20;
       };
       input-field = {
         monitor = "";
-        size = (1000,100);
+        size = "1000,100";
         outline_thickness = 0;
         dots_size = .2;
         dots_spacing = .2;
@@ -36,7 +36,7 @@
         dots_rounding = -2;
         outer_color = "0xFFFF0000";
         inner_color = "0x00000000";
-        font_color = "0xFFFF0000";
+        font_color = "0xFFF7768E";
         font_family = "FreeMono";
         fade_on_empty = false;
         rounding = -1;
@@ -53,7 +53,7 @@
         bothlock_color = -1;
         invert_numlock = true;
         swap_font_color = true;
-        position = (0, -15);
+        position = "0, -15";
       };
 
     };
