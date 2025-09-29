@@ -1,5 +1,8 @@
 {...}:
 {
+  wayland.windowManager.hyprland.settings.exec-once = [
+    "hyprlock"
+  ];
   programs.hyprlock = {
     enable = true;
     settings = {
