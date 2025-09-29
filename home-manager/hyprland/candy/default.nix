@@ -1,5 +1,9 @@
 {...}:
 {
+
+  imports = [
+    ./hyprpaper.nix
+  ];
   wayland.windowManager.hyprland.settings = {
     general = {
       gaps_in = 8;

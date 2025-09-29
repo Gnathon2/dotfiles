@@ -11,10 +11,10 @@
     gesture = [
       "3, right,  dispatcher,   layoutmsg, move -col"
       "3, left,   dispatcher,   layoutmsg, move +col"
-      "3, up,     dispatcher,   layoutmsg, coresize +conf"
+      "3, up,     dispatcher,   layoutmsg, colresize +conf"
       "3, down,   dispatcher,   layoutmsg, colresize -conf"
     ];
 
-    bind = "CTRL SUPER, L, exec, hyprctl keyword general:layout scrolling"
+    bind = "CTRL SUPER, L, exec, hyprctl keyword general:layout scrolling";
   };
 }
