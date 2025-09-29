@@ -63,9 +63,6 @@
       enable_hyprcursor = false;
     };
     
-    gesture = [
-      
-    ];
 
     dwindle = {
       pseudotile = true;
