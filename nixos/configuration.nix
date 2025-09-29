@@ -106,7 +106,7 @@
     # waybar 
     hyprpicker # color picker
     hyprshot
-    hypridle
+    # hypridle
     hyprsunset # blue light
     hyprpolkitagent
     wofi
