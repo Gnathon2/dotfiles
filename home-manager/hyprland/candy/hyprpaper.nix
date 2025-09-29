@@ -4,8 +4,8 @@
   services.hyprpaper = {
     enable = true;
     settings = {
-      preload = "~/.config/fonds/cybertoon.png";
-      wallpaper = ",~/.config/fonds/cybertoon.png";
+      preload = "~/.config/fonds/candy.png";
+      wallpaper = ",~/.config/fonds/candy.png";
     };
   };
 }
