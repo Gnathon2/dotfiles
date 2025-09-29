@@ -2,6 +2,9 @@
 {
   wayland.windowManager.hyprland = {
     plugins = [pkgs.hyprlandPlugins.hyprexpo];
+    settings.exec-once = [
+      "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprexpo.so'"
+    ];
     settings."plugin:hyprexpo" = {
       columns = 3;
       gap_size = 12;
