@@ -6,6 +6,7 @@
     # ./hyprpanel.nix
     ./candy
     ./hyprscrolling.nix
+    ./hyprexpo.nix
   ];
 
 
@@ -23,10 +24,12 @@
 
   
   wayland.windowManager.hyprland.settings =  {
-    monitor = "eDP-1,prefferred, auto, 1";
+    monitor = [
+      "eDP-1,prefferred, auto, 1"
+    ];
 
     source = [
-      "/home/hypruser/.config/hypr/hyprold.conf"
+      # "/home/hypruser/.config/hypr/hyprold.conf"
     ];
     
 
@@ -36,8 +39,27 @@
       "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprscrolling.so'"
       "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprwinwrap.so'"
       "hyprpanel"
+      "hypridle"
+      # "systemctl --user start hyprpolkitagent"
     ];
 
+    windowrulev2 = [
+      "suppressevent maximize, class:.*"
+      "idleinhibit fullscreen, class:.*"
+
+      "stayfocused, class:Code, title:^Open\sfile"
+      "workspace special:music, class:Spotify"
+      "float, title:^Picture-in-Picture"
+      "float, class:Matplotlib"
+      "float, class:.*mpv.*"
+      "pin, class:.*mpv.*"
+      
+    ];
+
+    cursor = {
+      enable_hyprcursor = false;
+    };
+    
     gesture = [
       "4, horizontal, workspace"
     ];
