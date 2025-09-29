@@ -5,7 +5,7 @@
     enable = true; 
     settings = {
       background = "#000";
-      theme = "citruszest";
+      theme = "Citruszest";
       cursor-style = "block";
       confirm-close-surface = false;
       mouse-scroll-multiplier = 0.5;

@@ -3,9 +3,9 @@
 {
 
   imports = [
-    ./hyprpaper.nix
     # ./hyprpanel.nix
-    ./hyprdeco.nix
+    ./candy
+    ./hyprscrolling.nix
   ];
 
 
@@ -50,7 +50,7 @@
     misc = {
       vfr = true;
     };
-    
+
     master = {
       new_status = "slave";
       new_on_active = "after";
