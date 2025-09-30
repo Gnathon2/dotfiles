@@ -38,12 +38,20 @@
 
       "CONTROL SUPER, E, pin"
       "CONTROL SUPER, H, togglesplit"
-      "CONTROL SUPER, pseudo,"
+      "CONTROL SUPER, D, pseudo,"
       "CONTROL SUPER, F, togglefloating"
-      "CONTROL SUPER, togglegroup"
+      "CONTROL SUPER, G, togglegroup"
       "CONTROL SUPER, O, exec, \"$(if hyprctl getoption decoration:blur:ignore_opacity | grep 1; then hyprctl keyword decoration:blur:ignore_opacity false; else hyprctl keyword decoration:blur:ignore_opacity true; fi)\""
       "CONTROL SUPER, K, exec, hyprctl keyword general:layout dwindle"
       "CONTROL SUPER, M, exec, hyprctl keyword general:layout master"
+
+      "CONTROL SUPER, mouse_down, workspace, e+1"
+      "CONTROL SUPER, mouse_up, workspace, e+1"
+    ];
+
+    bindm = [
+      "SUPER, code:272, movewindow" #leftclick
+      "SUPER, code:273, resizewindow" #rightclick
     ];
     
     gesture = [

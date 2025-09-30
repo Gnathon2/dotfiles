@@ -31,9 +31,9 @@
       "eDP-1,prefferred, auto, 1"
     ];
 
-    source = [
-      "/home/hypruser/.config/hypr/hyprbind.conf"
-    ];
+    # source = [
+    #   "/home/hypruser/.config/hypr/hyprbind.conf"
+    # ];
     
 
     exec-once = [
