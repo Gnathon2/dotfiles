@@ -3,7 +3,7 @@
   wayland.windowManager.hyprland.settings = {
     "$TUI" = "ghostty -e";
     bind = [
-      "ALT CONTROL, TAB, exec, hyprexpo" #(F11)
+      "ALT CONTROL, TAB, hyprexpo:expo, toggle" #(F11)
       ", XF86Calculator, exec, $TUI bc" #(F12)
       ", Print, exec, hyprshot -o ~/Pics/screenshots -m region"
       "SHIFT, Print, exec, hyprshot -o ~/Pics/screenshots -m window"
@@ -20,7 +20,7 @@
       "SUPER, S, exec, spotify"
       "SUPER, D, exec, discord"
       "SUPER, F, exec, firefox"
-      "SUPER, L, exec, hyprlock "
+      # L
       "SUPER, M, exec, ghostty --class=pap.er -e cava"
 
       "SUPER, W, exec, dmenu-wl_run"
