@@ -7,7 +7,8 @@
       ",XF86AudioPrev, exec, playerctl previous"
       ",XF86AudioNext, exec, playerctl next"
 
-      "SUPER, P, exec, hyprctl dispatch dpms toggle"
+      "SUPER, L, exec, hyprlock "
+      # "SUPER, P, exec, hyprctl dispatch dpms toggle"
     ];
     bindo = [ # long press
       ",XF86AudioPlay, exec, playerctl stop"
