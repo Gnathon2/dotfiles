@@ -25,13 +25,18 @@
 
       "SUPER, W, exec, dmenu-wl_run"
       "SUPER, C, exec, code"
+      # "SUPER, V, exec, $TUI \"cd~/visual2 && nix-shell\""
       "SUPER, N, exec, $TUI nano ./notes.txt"
 
       "SUPER, SPACE, exec, hyprpanel toggleWindow bar-0"
     ];
   
-  bindr = [
-      "SUPER, SPACE, exec, hyprpanel toggleWindow bar-0"
-  ];
+    bindr = [ # release
+        "SUPER, SPACE, exec, hyprpanel toggleWindow bar-0"
+    ];
+
+    bindo = [
+      ", SUPER, exec, wofi --show drun"
+    ];
   };
 }
