@@ -54,8 +54,24 @@
       name = "Sans";
       size = 11;
     };
+
+    cursorTheme = {
+      name = "bibata";
+      size = 24;
+    };
   };
 
+  # home.pointerCursor = {
+  #   name = "bibata"; # Nom exact du thème
+  #   size = 24;
+  #   gtk.enable = true;
+  #   x11.enable = true;
+  #   # package = null;
+  # };
+  home.sessionVariables = {
+    XCURSOR_THEME = "bibata";
+    XCURSOR_SIZE = 18;
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

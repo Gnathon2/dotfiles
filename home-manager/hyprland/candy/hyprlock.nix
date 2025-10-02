@@ -6,6 +6,10 @@
   programs.hyprlock = {
     enable = true;
     settings = {
+
+      auth = {
+        "fingerprint:enabled" = true;
+      };
       general = {
         hide_cursor = true;
         ignore_empty_input = true;
@@ -51,9 +55,9 @@
         fail_timeout = 0;
         fail_transition = 0;
 
-        capslock_color = -2;
-        numlock_color = -2;
-        bothlock_color = -1;
+        capslock_color = "0xFF078971";
+        # numlock_color = -2;
+        # bothlock_color = -1;
         invert_numlock = true;
         swap_font_color = true;
         position = "0, -15";
