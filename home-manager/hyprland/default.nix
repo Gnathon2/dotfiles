@@ -44,6 +44,7 @@
       "hyprpanel"
       # "hypridle"
       # "systemctl --user start hyprpolkitagent"
+      "hyprctl setcursor bibata 18"
     ];
 
     windowrulev2 = [
@@ -62,6 +63,11 @@
     cursor = {
       enable_hyprcursor = false;
     };
+
+    env = [
+      "HYPRCURSOR_THEME,bibata"
+      "HYPRCURSOS_SIZE,18"
+    ];
     
 
     dwindle = {
