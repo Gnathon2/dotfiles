@@ -22,3 +22,4 @@
     sur la doc hypr ça parle de gtk (cringe)
 
 - fprint
+- hypridle shaky

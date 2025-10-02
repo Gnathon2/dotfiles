@@ -14,37 +14,17 @@
 
 
   wayland.windowManager.hyprland.enable = true;
-  # wayland.windowManager.hyprland.plugins = [
-  #   # inputs.hyprland-plugins.packages.${pkgs.system}.hyprscrolling
-  #   # inputs.hyprland-plugins.packages.${pkgs.system}.hyprwinwrap
-  #   # inputs.hyprland-plugins.packages.${pkgs.system}.hyprexpo
-
-  #   # pkgs.hyprlandPlugins.hyprexpo
-    
-  #   # pkgs.hyprlandPlugins.hyprwinwrap
-
-  # ];
 
   
   wayland.windowManager.hyprland.settings =  {
     monitor = [
       "eDP-1,prefferred, auto, 1"
     ];
-
-    # source = [
-    #   "/home/hypruser/.config/hypr/hyprbind.conf"
-    # ];
     
 
     exec-once = [
-      # "hyprpaper & hyprlock"
-      # "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprexpo.so'"
-      # "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprscrolling.so'"
-      # "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprwinwrap.so'"
       "hyprpanel"
-      # "hypridle"
-      # "systemctl --user start hyprpolkitagent"
-      "hyprctl setcursor bibata 18"
+      "hyprctl setcursor bibata 12"
     ];
 
     windowrulev2 = [
@@ -65,8 +45,10 @@
     };
 
     env = [
+      "XCURSOR_THEME,bibata"
+      "XCURSOR_SIZE,18"
       "HYPRCURSOR_THEME,bibata"
-      "HYPRCURSOS_SIZE,18"
+      "HYPRCURSOR_SIZE,18"
     ];
     
 
