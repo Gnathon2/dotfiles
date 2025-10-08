@@ -9,9 +9,10 @@
       general.layout = "scrolling";
       "plugin:hyprscrolling" =  {
         fullscreen_on_one_column = true;
-        column_width = .493;
-        focus_fit_method = 1;
-        explicit_column_width = ".3, 0.493, 0.69, 0.99";
+        column_width = 0.69;
+        focus_fit_method = 0;
+        explicit_column_widths = ".3, 0.493, 0.69, 0.99";
+        follow_focus = true;
       };
       gesture = [
         "3, right,  dispatcher,   layoutmsg, move -col"
