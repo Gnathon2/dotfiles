@@ -2,6 +2,7 @@
 {
   wayland.windowManager.hyprland.settings = {
     "$TUI" = "ghostty -e";
+    "$wount" = "sudo mount /dev/nvme0n1p3 ~/win";
     bind = [
       "ALT CONTROL, TAB, hyprexpo:expo, toggle" #(F11)
       ", XF86Calculator, exec, $TUI bc" #(F12)
@@ -14,7 +15,7 @@
       "SUPER, E, exec, thunar" # file manager
       "SUPER, T, exec, kitty twt"
       "SUPER, I, exec, code ~/.config" #(F9)
-      "SUPER, O, exec, $TUI wount && obsidian || obsidian"
+      "SUPER, O, exec, $TUI $wount && obsidian || obsidian"
 
       "SUPER, Q, exec, ghostty"
       "SUPER, S, exec, spotify"
