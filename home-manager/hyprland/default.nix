@@ -23,7 +23,7 @@
     
 
     exec-once = [
-      "hyprpanel"
+      # "hyprpanel"
       "hyprctl setcursor bibata 12"
     ];
 
