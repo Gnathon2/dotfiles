@@ -4,7 +4,7 @@
 
   imports = [
     # ./hyprpanel.nix
-    ./theme-minimal
+    ./theme-candy
     ./hyprscrolling.nix
     ./hyprexpo.nix
     ./hyprwinwrap.nix 
