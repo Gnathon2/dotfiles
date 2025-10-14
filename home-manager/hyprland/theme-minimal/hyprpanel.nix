@@ -1,22 +1,18 @@
-{ inputs, pkgs, ... }  :
+{ inputs, pkgs, ... } :
 
 {
   programs.hyprpanel = {
     enable = true;
-    package = inputs.hyprpanel.packages.${pkgs.system}.default; # flake pkg
+    package = inputs.hyprpanel.packages.${pkgs.system}.default;
     settings = {
-      bar = {};
-
       theme = {
         bar = {
-          transparent = true;
+          transparent = false;
         };
         font = {
           size = "0.8rem";
         };
       };
-      
-
     };
   };
 }
