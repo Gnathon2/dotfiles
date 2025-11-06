@@ -18,6 +18,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "systmateur"; # nom de la machine systmateur mieux non?
 
@@ -181,17 +182,24 @@
 
 
 
+  
+
 
   # this one works but does not provide pulseaudio
   security.rtkit.enable = true;   # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true; 
     # If you want to use JACK applications, uncomment the following
-    #jack.enable = true;
+    # jack.enable = true;
   };
+  
+  boot.extraModprobeConfig = ''
+    options snd-hda-intel model=ideapad
+  '';
 
   services.upower.enable = true; # pour la batterie dans hyprpanel
   

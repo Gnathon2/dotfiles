@@ -4,12 +4,13 @@
 
   imports = [
     # ./hyprpanel.nix
-    ./theme-candy
+    ./theme-minimal
     ./hyprscrolling.nix
     ./hyprexpo.nix
     ./hyprwinwrap.nix 
     ./hypridle.nix
     ./hyprbind
+    ./hyprsunset.nix
   ];
 
 
