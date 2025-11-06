@@ -6,13 +6,13 @@
       exec-once = [
         "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprscrolling.so'"
         ];
-      general.layout = "scrolling";
+      # general.layout = "scrolling";
       "plugin:hyprscrolling" =  {
         fullscreen_on_one_column = true;
         column_width = 0.69;
         focus_fit_method = 0;
         explicit_column_widths = ".3, 0.493, 0.69, 0.99";
-        follow_focus = true;
+        follow_focus = false;
       };
       gesture = [
         "3, right,  dispatcher,   layoutmsg, move -col"
