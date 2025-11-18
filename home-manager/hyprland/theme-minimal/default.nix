@@ -4,7 +4,7 @@
   imports = [
     ./hyprpaper.nix
     ./hyprlock.nix
-    # ./hyprpanel.nix
+    ./hyprpanel.nix
   ];
   wayland.windowManager.hyprland.settings = {
     general = {

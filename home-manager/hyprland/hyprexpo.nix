@@ -1,4 +1,5 @@
 {pkgs, ...}:
+# workspaces overview
 {
   wayland.windowManager.hyprland = {
     plugins = [pkgs.hyprlandPlugins.hyprexpo];

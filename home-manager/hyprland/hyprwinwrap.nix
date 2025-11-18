@@ -1,4 +1,5 @@
 {pkgs, ...}:
+# set an app as wallpaper
 {
   wayland.windowManager.hyprland = {
     plugins = [pkgs.hyprlandPlugins.hyprwinwrap];
