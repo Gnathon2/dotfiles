@@ -54,11 +54,12 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = [];
   };
-
+  
+  
 
   #MARK: pkgs
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages =  with pkgs; [
+  environment.systemPackages = with pkgs; [
     ## SYS ##
     brightnessctl
     ntfs3g # mount windows
@@ -72,7 +73,7 @@
     unzip
     zip
     nix-index 
-    poppler_utils # ?
+    # poppler-utils # ?
     
 
     ## TUI ##
@@ -82,11 +83,15 @@
     clipse 
     bc # calculator
     alsa-utils # alsamixer
+    bluetuith
 
     ## GUI ##
     ghostty
     kitty # backup terminal
-    inputs.zen-browser.packages."${system}".default
+    inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
+    # inputs.unstable.legacyPackages.${pkgs.system}.vscode
+    # inputs.unstable.packages.${pkgs.system}.vscode
+    libreoffice-qt6-fresh
     vscode
     discord-ptb
     obsidian 
@@ -133,8 +138,8 @@
     # dterm 
     # dnote 
     # dstask
-    hollywood
-    pipes
+    # hollywood
+    # pipes
 
   ];
     
@@ -179,13 +184,9 @@
   # };
   # users.extraUsers.thomax.extraGroups = [ "jackaudio" ];
 
-
-
-
   
-
-
-  # this one works but does not provide pulseaudio
+  hardware.bluetooth.enable = true;
+  
   security.rtkit.enable = true;   # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.
   services.pulseaudio.enable = false;
   services.pipewire = {
@@ -193,9 +194,8 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true; 
-    # If you want to use JACK applications, uncomment the following
-    # jack.enable = true;
   };
+
   
   boot.extraModprobeConfig = ''
     options snd-hda-intel model=ideapad
@@ -281,7 +281,7 @@
 
     ## nix
     nxrebuild = "sudo nixos-rebuild --flake /etc/nixos";
-    nxre = "sudo nixos-rebuild --flake /etc/nixos switch --impure";
+    nxre = "sudo nixos-rebuild --flake /etc/nixos --impure switch";
     
     nxpoubelle = "sudo nix-collect-garbage";
     nxcg = "sudo nix-collect-garbage -d";
