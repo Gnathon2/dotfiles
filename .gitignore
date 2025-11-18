@@ -3,6 +3,7 @@ secret/
 
 fonds/
 
+bluetuith/
 btop/
 cava/
 Code/
@@ -11,11 +12,13 @@ discord/
 Electron/
 ensemble*/
 environment.d/
+geogebra/
 ghostty/
 gtk*/
 hypr/
 hyprpanel/
 kitty/
+libreoffice/
 neofetch/
 obsidian/
 pulse/
@@ -23,6 +26,7 @@ ranger/
 spotify/
 systemd/
 Thunar
+twt/
 xfce4/
 background
 ensmble.conf    
