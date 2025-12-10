@@ -8,13 +8,14 @@
 
   home.packages = with pkgs; [
     cava
-    inputs.hyprpanel.packages.${pkgs.system}.default
+    inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     olympus
     discord
     graphviz
     geogebra
     dmenu-wayland
+    cool-retro-term
   ];
   
   gtk = {
@@ -35,9 +36,10 @@
       size = 11;
     };
 
+    
     cursorTheme = {
-      name = "bibata";
-      size = 240;
+      name = "custom";
+      size = 39;
     };
   };
 
