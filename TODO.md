@@ -23,3 +23,4 @@
 
 - fprint
 - hypridle shaky
+- cool-retro-term

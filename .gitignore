@@ -1,6 +1,7 @@
 **/*.lock
 secret/
 
+.gitignore
 fonds/
 
 bluetuith/
@@ -23,6 +24,7 @@ neofetch/
 obsidian/
 pulse/
 ranger/
+spicetify/
 spotify/
 systemd/
 Thunar
@@ -31,3 +33,4 @@ xfce4/
 background
 ensmble.conf    
 mimeapps.list
+QtProject.conf
