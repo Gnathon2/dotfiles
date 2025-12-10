@@ -10,7 +10,7 @@
           transparent = false;
         };
         font = {
-          size = "0.8rem";
+          size = "0.79rem";
         };
       };
     };

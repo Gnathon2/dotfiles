@@ -20,12 +20,14 @@
   wayland.windowManager.hyprland.settings =  {
     monitor = [
       "eDP-1,prefferred, auto, 1"
+      "HDMI-A-1, prefferred, auto, 1, mirror, eDP-1" # duplicate
+      ", preferred, auto, 1"
     ];
     
 
     exec-once = [
-      "hyprpanel"
-      "hyprctl setcursor bibata 12"
+      # "hyprpanel"
+      "hyprctl setcursor custom 39"
     ];
 
     windowrulev2 = [
