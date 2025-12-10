@@ -185,8 +185,8 @@
   # users.extraUsers.thomax.extraGroups = [ "jackaudio" ];
 
   
-  hardware.bluetooth.enable = true;
-  
+  hardware.bluetooth.enable = true; # can enable it at runtime
+  hardware.bluetooth.powerOnBoot = false;
   security.rtkit.enable = true;   # rtkit (optional, recommended) allows Pipewire to use the realtime scheduler for increased performance.
   services.pulseaudio.enable = false;
   services.pipewire = {
@@ -276,8 +276,8 @@
     re = "reboot";
     dodo = "systemctl suspend";
 
-    wount = "sudo mount /dev/nvme0n1p3 ~/win";
-    uwount = "sudo umount ~/win";
+    wount = "sudo mount /dev/nvme0n1p3 /mnt/win";
+    uwount = "sudo umount /mnt/win";
 
     ## nix
     nxrebuild = "sudo nixos-rebuild --flake /etc/nixos";
@@ -288,6 +288,7 @@
 
     nxchan = "sudo nix-channel";
     nxflake = "sudo nix flake";
+    nxfl = "sudoo nix flake --update";
     nxsh = "nix-shell";
 
     nxconf = "sudo nano /etc/nixos/configuration.nix";
