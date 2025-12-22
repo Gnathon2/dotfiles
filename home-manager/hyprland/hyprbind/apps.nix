@@ -16,6 +16,7 @@
       "SUPER, T, exec, kitty twt"
       "SUPER, I, exec, code ~/.config" #(F9)
       "SUPER, O, exec, $TUI $wount && obsidian || obsidian"
+      "SUPER, P, exec, code ~/contest"
 
       "SUPER, Q, exec, ghostty"
       "SUPER, S, exec, spotify"
