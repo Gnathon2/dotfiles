@@ -48,10 +48,11 @@
       "CONTROL SUPER, mouse_down, workspace, e+1"
       "CONTROL SUPER, mouse_up, workspace, e+1"
     ];
+    binds.drag_threshold = 10;
 
     bindm = [
-      "SUPER, code:272, movewindow" #leftclick
-      "SUPER, code:273, resizewindow" #rightclick
+      "CONTROL SUPER, A, movewindow" #leftclick
+      "CONTROL SUPER, Z, resizewindow" #rightclick
     ];
     
     gesture = [

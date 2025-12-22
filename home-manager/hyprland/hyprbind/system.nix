@@ -2,12 +2,12 @@
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      ", XF86AudioPlay, exec, player play-pause"
+      ",XF86AudioPlay, exec, player play-pause"
       ",XF86AudioStop, togglespecialworkspace, music"
       ",XF86AudioPrev, exec, playerctl previous"
       ",XF86AudioNext, exec, playerctl next"
 
-      "SUPER, L, exec, hyprlock "
+      "SUPER, L, exec, hyprlock"
       # "SUPER, P, exec, hyprctl dispatch dpms toggle"
     ];
     bindo = [ # long press

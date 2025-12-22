@@ -12,7 +12,8 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     # nixpkgs-python.url = "github:cachix/nixpkgs-python";
-    
+
+    # hyprland-plugins.url = "github:Hyprland/Hyprland-plugins?ref=main";    
   };
 
   outputs = { 
@@ -22,6 +23,7 @@
       hyprland,
       # hyprland-plugins,
       zen-browser,
+      
       ...
   } @ inputs : 
   

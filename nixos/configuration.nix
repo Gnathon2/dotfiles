@@ -85,6 +85,7 @@
     alsa-utils # alsamixer
     bluetuith
 
+
     ## GUI ##
     ghostty
     kitty # backup terminal
