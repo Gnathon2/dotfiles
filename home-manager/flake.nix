@@ -22,6 +22,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprlauncher = {
+      url = "github:hyprwm/hyprlauncher";
+      inputs.hyprland.follows = "hyprland";
+    };
+
   };
 
   outputs = inputs @ {
@@ -30,6 +35,8 @@
     home-manager,
     hyprland,
     hyprland-plugins,
+    hyprpanel,
+    hyprlauncher,
     ...
   }:
 
