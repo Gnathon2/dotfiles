@@ -73,6 +73,7 @@
     unzip
     zip
     nix-index 
+    ncdu # tree du
     # poppler-utils # ?
     
 
@@ -92,7 +93,7 @@
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     # inputs.unstable.legacyPackages.${pkgs.system}.vscode
     # inputs.unstable.packages.${pkgs.system}.vscode
-    libreoffice-qt6-fresh
+    
     vscode
     discord-ptb
     obsidian 

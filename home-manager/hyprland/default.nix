@@ -3,14 +3,15 @@
 {
 
   imports = [
-    # ./hyprpanel.nix
-    ./theme-minimal
-    ./hyprscrolling.nix
-    ./hyprexpo.nix
-    ./hyprwinwrap.nix 
-    ./hypridle.nix
     ./hyprbind
+    ./theme-minimal
+
+    ./hyprexpo.nix
+    ./hypridle.nix
+    ./hyprlauncher.nix
+    ./hyprscrolling.nix
     ./hyprsunset.nix
+    ./hyprwinwrap.nix 
   ];
 
 
@@ -28,6 +29,7 @@
     exec-once = [
       # "hyprpanel"
       "hyprctl setcursor custom 39"
+      "hypridle"
     ];
 
     windowrulev2 = [

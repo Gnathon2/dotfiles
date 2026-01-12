@@ -1,0 +1,5 @@
+{...}:
+{
+  inputs.hyprlauncher.enable = true;
+
+}
