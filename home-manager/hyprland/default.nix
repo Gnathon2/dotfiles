@@ -8,7 +8,6 @@
 
     ./hyprexpo.nix
     ./hypridle.nix
-    ./hyprlauncher.nix
     ./hyprscrolling.nix
     ./hyprsunset.nix
     ./hyprwinwrap.nix 
