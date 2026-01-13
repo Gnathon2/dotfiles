@@ -14,8 +14,9 @@
     discord
     graphviz
     geogebra
-    dmenu-wayland
+    # dmenu-wayland
     cool-retro-term
+    hyprlauncher
   ];
   
   gtk = {

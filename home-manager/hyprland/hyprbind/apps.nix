@@ -25,7 +25,8 @@
       # L
       "SUPER, M, exec, ghostty --class=pap.er -e cava"
 
-      "SUPER, W, exec, dmenu-wl_run"
+      # "SUPER, W, exec, dmenu-wl_run"
+      "SUPER, W, exec, hyprlauncher"
       "SUPER, C, exec, code"
       # "SUPER, V, exec, $TUI \"cd~/visual2 && nix-shell\""
       "SUPER, N, exec, $TUI nano ./notes.txt"
