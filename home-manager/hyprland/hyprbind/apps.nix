@@ -39,7 +39,7 @@
     ];
 
     bindo = [
-      ", SUPER, exec, wofi --show drun"
+      "SUPER, SUPER, exec, hyprlauncher"
     ];
   };
 }
