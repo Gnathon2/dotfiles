@@ -9,12 +9,12 @@
         after_sleep_cmd = "hyprctl dispatch dpms on";
       };
       listener = [
-        # { # kb
-        #   timeout = 5;
-        #   on-timeout = "brightnessctl -sd platform::kbd_backlight set 0";
-        #   on-resume = "brightnessctl -rd platform::kbd_backlight";
-        #   ignore_inhibit = "true";
-        # }
+        { # kb
+          timeout = 150;
+          on-timeout = "brightnessctl -sd platform::kbd_backlight set 0";
+          on-resume = "brightnessctl -rd platform::kbd_backlight";
+          ignore_inhibit = "true";
+        }
         { # dim
           timeout = 150;
           on-timeout = "brightnessctl -s set 1         # set monitor backlight to minimum, avoid 0 on OLED monitor.";
@@ -24,15 +24,16 @@
           timeout = 300; # 5min
           on-timeout = "loginctl lock-session"; # lock screen when timeout has passed";
         }
-        { # sleep
-          timeout = 305;
-          on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
-          # ignore_inhibit = "true";
-        }
+        # { # srceen off
+        #   timeout = 305;
+        #   on-timeout = "hyprctl dispatch dpms off";
+        #   on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
+        #   # ignore_inhibit = "true";
+        # }
         { # suspend
           timeout = "330";
           on-timeout = "systemctl suspend";
+
         }
       ];
     };
