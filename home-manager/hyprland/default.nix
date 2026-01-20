@@ -6,11 +6,11 @@
     ./hyprbind
     ./theme-minimal
 
-    ./hyprexpo.nix
+    # ./hyprexpo.nix
     ./hypridle.nix
-    ./hyprscrolling.nix
-    ./hyprsunset.nix
-    ./hyprwinwrap.nix 
+    # ./hyprscrolling.nix
+    # ./hyprsunset.nix
+    # ./hyprwinwrap.nix 
   ];
 
 
@@ -41,7 +41,7 @@
       "float, class:Matplotlib"
       "float, class:.*mpv.*"
       "pin, class:.*mpv.*"
-      
+      "float, class:Qemu.*"
     ];
 
     cursor = {
