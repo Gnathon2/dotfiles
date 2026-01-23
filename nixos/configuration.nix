@@ -144,7 +144,9 @@
     # pipes
 
   ];
-    
+  
+  # virtualisation.docker.enable = true;
+
     
     
   programs = {

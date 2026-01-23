@@ -17,7 +17,7 @@
       gesture_positive = false;
     };
     settings.bind = [
-      "ALT CONTROL, TAB, hyprexpo:expo, toggle"
-    ]
+      # "ALT CONTROL, TAB, hyprexpo:expo, toggle"
+    ];
   };
 }

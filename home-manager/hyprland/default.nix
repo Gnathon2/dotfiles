@@ -6,11 +6,11 @@
     ./hyprbind
     ./theme-minimal
 
-    # ./hyprexpo.nix
+    ./hyprexpo.nix
     ./hypridle.nix
-    # ./hyprscrolling.nix
-    # ./hyprsunset.nix
-    # ./hyprwinwrap.nix 
+    ./hyprscrolling.nix
+    ./hyprsunset.nix
+    ./hyprwinwrap.nix 
   ];
 
 
