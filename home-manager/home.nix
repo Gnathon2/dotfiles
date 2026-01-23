@@ -17,6 +17,8 @@
     # dmenu-wayland
     cool-retro-term
     hyprlauncher
+
+    inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
   
   gtk = {

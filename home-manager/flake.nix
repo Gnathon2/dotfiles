@@ -27,6 +27,10 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    glide = {
+      url = "github:glide-browser/glide.nix";
+    };
+
   };
 
   outputs = inputs @ {
@@ -37,6 +41,7 @@
     hyprland-plugins,
     hyprpanel,
     hyprlauncher,
+    glide, 
     ...
   }:
 
