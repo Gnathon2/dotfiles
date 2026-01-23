@@ -22,6 +22,7 @@
       "SUPER, S, exec, spotify"
       "SUPER, D, exec, discord"
       "SUPER, F, exec, firefox"
+      "SUPER, G, exec, glide"
       # L
       "SUPER, M, exec, ghostty --class=pap.er -e cava"
 
