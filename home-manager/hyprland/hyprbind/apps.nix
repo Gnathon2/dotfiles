@@ -4,7 +4,7 @@
     "$TUI" = "ghostty -e";
     "$wount" = "sudo mount /dev/nvme0n1p3 /mnt/win";
     bind = [
-      "ALT CONTROL, TAB, hyprexpo:expo, toggle" #(F11)
+       #(F11)
       ", XF86Calculator, exec, $TUI bc" #(F12)
       ", Print, exec, hyprshot -o ~/Pics/screenshots -m region"
       "SHIFT, Print, exec, hyprshot -o ~/Pics/screenshots -m window"

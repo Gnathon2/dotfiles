@@ -16,5 +16,8 @@
       gesture_distance = 300;
       gesture_positive = false;
     };
+    settings.bind = [
+      "ALT CONTROL, TAB, hyprexpo:expo, toggle"
+    ]
   };
 }
