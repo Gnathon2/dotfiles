@@ -30,11 +30,11 @@
         #   on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
         #   # ignore_inhibit = "true";
         # }
-        { # suspend
-          timeout = "330";
-          on-timeout = "systemctl suspend";
+        # { # suspend
+        #   timeout = "330";
+        #   on-timeout = "systemctl suspend";
 
-        }
+        # }
       ];
     };
   };
