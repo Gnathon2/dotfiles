@@ -1,8 +1,48 @@
 { inputs, pkgs, ... } :
 
-let
+let 
   couleur = import ./colors.nix;
-in
+in let
+  colors = {
+    background = couleur.crust;
+    button_background = couleur.crust;
+    default = "#f00";
+    menu_background = couleur.black;
+    text1 = couleur.text;
+    text2 = couleur.subtext1;
+    text3 = couleur.subtext0;
+    tooltip = couleur.text;
+    popover = couleur.lavender;
+    # modules
+    battery = couleur.yellow;
+    bluetooth = couleur.sapphire;
+    cava = couleur.flamingo;
+    clock = couleur.green;
+    cpu = couleur.red;
+    cpuTemp = couleur.red;
+    dashboard = couleur.blue;
+    disk = couleur.sky;
+    hypridle = couleur.mauve;
+    hyprsunset = couleur.peach;
+    media = couleur.flamingo;
+    network = couleur.rosewater;
+    notification = couleur.lavender;
+    osd = couleur.pink;
+    ram = couleur.yellow;
+    systray = couleur.green;
+    volume = couleur.pink;
+    windowtitle = couleur.lavender;
+    workspaces = {
+      active = couleur.lavender;
+      occupied = couleur.rosewater;
+      available = couleur.green;
+      hover = couleur.red;
+
+    };
+    #misc
+    scaling = 92;
+  };
+in 
 {
   programs.hyprpanel = {
     enable = true;
@@ -64,8 +104,8 @@ in
             ];
             right = [
               "volume"
-              "network"
               "bluetooth"
+              "network"
               "cputemp"
               "hyprsunset"
               "hypridle"
@@ -180,7 +220,7 @@ in
         };
 
         volume = {
-          raiseMaximumVolme= true;
+          raiseMaximumVolume= true;
         };
       };
 
@@ -203,53 +243,278 @@ in
 
       theme = {
         bar = {
+          background = colors.background;
+          border = {
+            location = "none"; # none | full | top | right | bottom | left | horizontal | vertical
+            width = "0.1rem";
+            color = colors.default;
+          };
           dropdownGap = "2em";
           enableShadow = false;
           layer = "background";
           location = "top"; # top | bottom 
-          outer_spacing = "1.6em";
+          outer_spacing = "0em";
           scaling = 100;
           transparent = false;
 
-          border = {
-            location = "none"; # none | full | top | right | bottom | left | horizontal | vertical
-            width = "0.1rem";
-          };
-
           buttons = {
             borderSize = "0.1rem";
+            borderColor = colors.default;
             enableBorders = false;
             innerRadiusMultiplier = "0.4";
             outer_spacing = "0em";
-            padding_x = "0.5em";
+            padding_x = "0.7em";
             padding_y = "0em";
-            radius = "1em";
-            spacing = "0.2em";
+            radius = "0em";
+            spacing = "0em";
             y_margins = "0em"; #vertical spacing
+            background = "#0F0";
+            icon_background = "#00F";
+            hover = couleur.surface1;
+            icon = couleur.lavender;
+            text = couleur.lavender;
+            style = "default";
 
-            customModules.cava.spacing = "0em";
-            clock.spacing = "0em";
-            workspaces.fontSize = "1em";
+            dashboard = {
+             background = colors.button_background; 
+              border = colors.dashboard;
+              icon = colors.dashboard;
+            };
+
+            notifications = {
+              background = colors.button_background;
+              border = colors.notification;
+              icon_background = colors.notification;
+              icon = colors.notification;
+              total = colors.notification;
+            };
+
+            battery = {
+              background = colors.button_background;
+              border = colors.battery;
+              icon = colors.battery;
+              icon_background = colors.battery;
+              text = colors.battery;
+            };
+
+            systray = {
+              background = colors.button_background;
+              border = colors.systray;
+              customIcon = colors.systray;
+            };
+
+            clock = {
+              spacing = "0em";
+              background = colors.button_background;
+              border = colors.clock;
+              icon = colors.clock;
+              icon_background = colors.clock;
+              text = colors.clock;
+            };
+
+            media = {
+              background = colors.button_background;
+              border = colors.media;
+              icon = colors.media;
+              icon_background = colors.media;
+              text = colors.media;
+            };
+
+            volume = {
+              background = colors.button_background;
+              border = colors.volume;
+              icon = colors.volume;
+              icon_background = colors.volume;
+              text = colors.volume;
+            };
+
+            network = {
+              background = colors.button_background;
+              border = colors.network;
+              icon = colors.network;
+              icon_background = colors.network;
+              text = colors.network;
+            };
+
+            bluetooth = {
+              background = colors.button_background;
+              border = colors.bluetooth;
+              icon = colors.bluetooth;
+              icon_background = colors.bluetooth;
+              text = colors.bluetooth;
+            };
+
+            windowtitle = {
+              background = colors.button_background;
+              border = colors.windowtitle;
+              icon = colors.windowtitle;
+              icon_background = colors.windowtitle;
+              text = colors.windowtitle;
+            };
+
+            workspaces = {
+              fontSize = "1em";
+              background = colors.button_background;
+              border = colors.workspaces.occupied;
+              available = colors.workspaces.available;
+              occupied = colors.workspaces.occupied;
+              active = colors.workspaces.active;
+              hover = colors.workspaces.hover;
+              numbered_active_highlighted_text_color = couleur.mantle;
+              numbered_active_underline_color = couleur.pink;
+            };
+
+            modules.cava = {
+              spacing = "0em";
+              background = colors.button_background;
+              border = colors.cava;
+              icon = colors.cava;
+              text = colors.cava;
+            };
+
+            modules.hypridle = {
+              background = colors.button_background;
+              border = colors.hypridle;
+              icon_background = colors.hypridle;
+              icon = colors.hypridle;
+              text = colors.hypridle;
+            };
+
+            modules.hyprsunset = {
+              background = colors.button_background;
+              border = colors.hyprsunset;
+              icon = colors.hyprsunset;
+              text = colors.hyprsunset;
+            };
+
+            modules.cpuTemp = {
+              background = colors.button_background;
+              border = colors.cpuTemp;
+              icon = colors.cpuTemp;
+              text = colors.cpuTemp;
+            };
           };
           
           menus = {
-            # enableShadow = false;
+            background = colors.background;
+            border.size = "0em";
+            cards = colors.menu_background;
+            text = colors.text1;
+            dimtext = colors.text2;
+            feinttext = colors.text3;
+            label = colors.default; # subtitles in settings
+
+            popover = {
+              background = colors.background;
+              # border = couleur.mantle;
+              text = colors.popover;
+              scaling = 70;
+            };
+            listitems = {
+              passive = couleur.text;
+              active = couleur.lavender;
+            };
+            icons = {
+              passive = couleur.overlay0;
+              active = couleur.lavender;
+            };
+            switch = {
+              enabled = couleur.lavender;
+              disabled = couleur.surface0;
+              puck = couleur.overlay0;
+            };
+            check_radio_button = {
+              active = couleur.lavender;
+              background = couleur.surface1;
+            };
+            buttons = {
+              default = couleur.lavender;
+              active = couleur.pink;
+              disabled = couleur.overlay0;
+              text = couleur.mantle;
+            };
+            iconbuttons = {
+              passive = couleur.subtext0;
+              active = couleur.lavender;
+            };
+            progressbar = {
+              background = couleur.surface1;
+              foreground = couleur.lavender;
+            };
+            slider = {
+              primary = couleur.lavender;
+              background = couleur.overlay0;
+              backgroundhover = couleur.surface1;
+              puck = couleur.overlay0;
+            };
+            dropdownmenu = {
+              background = couleur.crust;
+              text = couleur.text;
+              divider = couleur.base;
+            };
+            tooltip = {
+              background = couleur.crust;
+              text = couleur.text;
+            };
+
             menu = {
+              battery = {
+                scaling = colors.scaling;
+              };
+              bluetooth = {
+                scaling = colors.scaling+2;
+              };
+              clock = {
+                scaling = colors.scaling;
+              };
               dashboard = {
+                scaling = colors.scaling;
                 profile = {
                   size = "15em";
                 };
+                monitors = {
+                  cpu.bar = colors.cpu;
+                  cpu.icon = colors.cpu;
+                  cpu.label = colors.cpu;
+                  disk.bar = colors.disk;
+                  disk.icon = colors.disk;
+                  disk.label = colors.disk;
+                  ram.bar = colors.ram;
+                  ram.icon = colors.ram;
+                  ram.label = colors.ram;
+                };
               };
               media = {
-                scaling = 80;
+                scaling = colors.scaling;
                 card.tint = 0;
+              };
+              network = {
+                scaling = colors.scaling+3;
               };
               notifications = {
                 height = "20em";
               };
-            };
-            popovers = {
-              scaling = 70
+              power = {
+                scaling = colors.scaling;
+              };
+              volume = {
+                background.color = colors.background;
+                card.color = colors.menu_background;
+                label.color = colors.volume;
+                scaling = colors.scaling;
+                text = colors.volume;
+
+                audio_slider.primary = colors.volume;
+                input_slider.primary = colors.volume;
+                listitems = {
+                  active = colors.volume;
+                  passive = colors.text1;
+                };
+                iconbutton = {
+                  active = colors.volume;
+                  passive = colors.text1;
+                };
+              };
             };
           };
         };
@@ -267,12 +532,38 @@ in
           location = "top";
           margins = "0px 0px 0px 0px";
           orientation = "horizontal";
-          radius = "10em";
-          scaling = 60;
+          radius = "2em";
+          scaling = 88;
+          icon_container = colors.background;
+          bar_container = colors.background;
+          bar_color = colors.osd;
+          bar_empty_color = couleur.surface0;
+          bar_overflow_color = couleur.red;
+          icon = colors.osd;
+          label = colors.osd;
         };
 
         tooltip = {
           scaling = 80;
+          text = colors.tooltip;
+          background = colors.background;
+        };
+
+        notification = {
+          background = colors.background;
+          label = couleur.lavender;
+          time = colors.text3;
+          text = colors.text1;
+          labelicon = colors.notification;
+          scaling = colors.scaling;
+          actions = {
+            background = colors.notification;
+            text = colors.menu_background;
+          };
+          close_button = {
+            background = couleur.red;
+            label = colors.menu_background;
+          };
         };
       };
     };
