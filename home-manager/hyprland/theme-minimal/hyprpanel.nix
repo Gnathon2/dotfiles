@@ -35,7 +35,7 @@ in
           showIcon = false;
         };
 
-        custromModule.hypridle = {
+        customModules.hypridle = {
           label = false;
           pollingInterval = 60000;
         };
@@ -203,7 +203,7 @@ in
 
       theme = {
         bar = {
-          dropdownGap = "1.6em";
+          dropdownGap = "2em";
           enableShadow = false;
           layer = "background";
           location = "top"; # top | bottom 
@@ -219,7 +219,13 @@ in
           buttons = {
             borderSize = "0.1rem";
             enableBorders = false;
-            y_margins = "0.4em";
+            innerRadiusMultiplier = "0.4";
+            outer_spacing = "0em";
+            padding_x = "0.5em";
+            padding_y = "0em";
+            radius = "1em";
+            spacing = "0.2em";
+            y_margins = "0em"; #vertical spacing
 
             customModules.cava.spacing = "0em";
             clock.spacing = "0em";
@@ -243,6 +249,7 @@ in
               };
             };
             popovers = {
+              scaling = 70
             };
           };
         };
@@ -250,20 +257,22 @@ in
         font = {
           label = "Monospace Bold";
           name = "Monospace";
-          size = "0.8rem";
+          size = "1em";
           # style = "normal";
-          weight = 600;
+          weight = 300;
         };
+
         osd = {
           duration = 500; # ms
           location = "top";
           margins = "0px 0px 0px 0px";
           orientation = "horizontal";
           radius = "10em";
-          scaling = 50;
+          scaling = 60;
         };
+
         tooltip = {
-          scaling = 50;
+          scaling = 80;
         };
       };
     };
