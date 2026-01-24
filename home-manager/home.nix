@@ -20,6 +20,28 @@
 
     inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
+
+  programs = {
+    vscode.enable = true;
+  };
+
+  # catppuccin = {
+  #   enable = true;
+  #   # optionally configure the extension settings, defaults are shown below:
+  #   vscode = {
+  #     accent = "mauve";
+  #     settings = {
+  #       boldKeywords = true;
+  #       italicComments = true;
+  #       italicKeywords = true;
+  #       colorOverrides = {};
+  #       customUIColors = {};
+  #       workbenchMode = "default";
+  #       bracketMode = "rainbow";
+  #       extraBordersEnabled = false;
+  #     };
+  #   };
+  # };
   
   gtk = {
     enable = true;
