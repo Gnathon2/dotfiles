@@ -1,13 +1,25 @@
-- floating calculator
+# TODO
+
+## ricing
 - hyprpanel
-- systemctl supend when closing laptop
-- kitty
-- doc about redo
-- see xtra dispactchers in hyprplugins for spotify
-- better binds for dmenu / wofi
-- better dmenu
-- minimal conf
+- cool-retro-term
+- dmenu (> hyprlauncher unless i can `code .` from hyprlauncher)
+
+## project
+- floating calculator
+- lit. note
+- vi complete suite (glide, ...)
+
+## core
 - poweroff button
+- systemctl supend when closing laptop
+
+## known bug
+- hypridle shaky (sleep mode is the issue)
+
+## misc
+- see xtra dispactchers in hyprplugins for spotify
+- fprint
 - CURSORS
     ~/.local/share/icons/NomDuCurseur/
         index.theme
@@ -20,7 +32,4 @@
     puis debugger
     
     sur la doc hypr ça parle de gtk (cringe)
-
-- fprint
-- hypridle shaky
-- cool-retro-term
+- doc about redo
