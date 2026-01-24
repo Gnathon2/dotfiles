@@ -16,7 +16,6 @@ in
         # scrollSpeed = 1;
 
         customModules.cava = {
-          autoHide = true;
           autoSensitivity = true;
           bars = 14;
           channels = 2;
@@ -25,6 +24,7 @@ in
           lowCutoff = 50;
           noiseReduction = 0.77;
           samplerate = 44100;
+          showActiveOnly = true;
           showIcon = false;
           spaceCharacter = "";
           stereo = false;
