@@ -1,7 +1,9 @@
 { inputs, pkgs, ... } :
 
+let
+  couleur = import ./colors.nix;
+in
 {
-  # imports = [ ./theme.nix ];
   programs.hyprpanel = {
     enable = true;
     package = inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default;
