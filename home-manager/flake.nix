@@ -31,6 +31,10 @@
       url = "github:glide-browser/glide.nix";
     };
 
+    catppuccin = {
+      url = "github:catppuccin/nix";
+    };
+
   };
 
   outputs = inputs @ {
@@ -42,6 +46,7 @@
     hyprpanel,
     hyprlauncher,
     glide, 
+    catppuccin,
     ...
   }:
 
@@ -55,6 +60,7 @@
         extraSpecialArgs = { inherit inputs; };
         modules = [ 
           ./home.nix
+          catppuccin.homeModules.catppuccin
           # { nixpkgs.overlays = [ inputs.hyprpanel.overlay ];} # potentially a bad idea
         ];
       };

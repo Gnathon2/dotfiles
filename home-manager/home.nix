@@ -25,36 +25,40 @@
     vscode.enable = true;
   };
 
-  # catppuccin = {
-  #   enable = true;
-  #   # optionally configure the extension settings, defaults are shown below:
-  #   vscode = {
-  #     accent = "mauve";
-  #     settings = {
-  #       boldKeywords = true;
-  #       italicComments = true;
-  #       italicKeywords = true;
-  #       colorOverrides = {};
-  #       customUIColors = {};
-  #       workbenchMode = "default";
-  #       bracketMode = "rainbow";
-  #       extraBordersEnabled = false;
-  #     };
-  #   };
-  # };
+  catppuccin = {
+    enable = true;
+    accent = "maroon";
+    flavor = "mocha";
+
+    vscode.profiles.catppuccin = {
+      # can't use this because it locks .vscode/extensions/ which is no no
+      enable = false;
+      accent = "yellow";
+      settings = {
+        boldKeywords = true;
+        italicComments = true;
+        italicKeywords = true;
+        colorOverrides = {};
+        customUIColors = {};
+        workbenchMode = "default";
+        bracketMode = "rainbow";
+        extraBordersEnabled = false;
+      };
+    };
+  };
   
   gtk = {
     enable = true;
 
-    theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
-    };
+    # theme = {
+    #   package = pkgs.flat-remix-gtk;
+    #   name = "Flat-Remix-GTK-Grey-Darkest";
+    # };
 
-    iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
-    };
+    # iconTheme = {
+    #   package = pkgs.adwaita-icon-theme;
+    #   name = "Adwaita";
+    # };
 
     font = {
       name = "Sans";
