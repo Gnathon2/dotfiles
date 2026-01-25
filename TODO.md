@@ -1,9 +1,20 @@
 # TODO
 
 ## ricing
-- hyprpanel
 - cool-retro-term
-- dmenu (> hyprlauncher unless i can `code .` from hyprlauncher)
+- dmenu (> hyprlauncher unless i can `code feur` from hyprlauncher)
+
+### catppuccin 
+- ghostty
+- firefox (glide)
+- hyprlauncher if not guezz
+
+
+### hyprpanel
+- dropdown menus 
+- quick settings in dashboard (hyprsunset / hypridle)
+- underline color on workspaces
+- osd ?
 
 ## project
 - floating calculator
@@ -16,6 +27,7 @@
 
 ## known bug
 - hypridle shaky (sleep mode is the issue)
+- can't manualy toggle hyprsunset
 
 ## misc
 - see xtra dispactchers in hyprplugins for spotify
