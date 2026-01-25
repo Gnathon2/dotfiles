@@ -4,10 +4,10 @@ let
   couleur = import ./colors.nix;
 in let
   colors = {
-    background = couleur.crust;
-    button_background = couleur.crust;
+    background = couleur.black;
+    button_background = couleur.black;
     default = "#f00";
-    menu_background = couleur.black;
+    menu_background = couleur.crust;
     text1 = couleur.text;
     text2 = couleur.subtext1;
     text3 = couleur.subtext0;
@@ -489,7 +489,7 @@ in
                 card.tint = 0;
               };
               network = {
-                scaling = colors.scaling+3;
+                scaling = colors.scaling+4;
               };
               notifications = {
                 height = "20em";
