@@ -8,7 +8,7 @@
 - ghostty
 - firefox (glide)
 - hyprlauncher if not guezz
-
+- vscode: some elements are weird (very bright textboxes)
 
 ### hyprpanel
 - dropdown menus 
