@@ -1,0 +1,42 @@
+{
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "cpp": false,
+        "java": true,
+        "nix": false,
+        "python": false
+    },
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "git.confirmSync": false,
+    "editor.fontSize": 20,
+    "window.menuBarVisibility": "compact",
+    "cph.language.python.Command": "python",
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "cph.general.timeOut": 30000,
+    "git.ignoreRebaseWarning": true,
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    "chat.viewSessions.orientation": "stacked",
+    "catppuccin.accentColor": "yellow",
+    "debug.console.fontSize": 16,
+    "terminal.integrated.fontSize": 16,
+    "chat.editor.fontSize": 18,
+    "chat.fontSize": 16,
+    "markdown.preview.fontSize": 20,
+    "editor.minimap.sectionHeaderFontSize": 12,
+    "catppuccin.colorOverrides": {
+        "macchiato": {
+            "base": "#000000",
+            "crust": "#000000",
+            "mantle": "#000000"
+        }
+    },
+    "catppuccin.boldKeywords": true,
+    "catppuccin.italicKeywords": false,
+    "catppuccin-icons.monochrome": true
+}
