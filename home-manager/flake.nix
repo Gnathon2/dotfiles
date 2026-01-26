@@ -15,17 +15,21 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    hyprlauncher = {
+      url = "github:hyprwm/hyprlauncher";
+      inputs.hyprland.follows = "hyprland";
+    };
 
+    hyprshutdown = {
+      url = "github:hyprwm/hyprshutdown";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprlauncher = {
-      url = "github:hyprwm/hyprlauncher";
-      inputs.hyprland.follows = "hyprland";
-    };
 
     glide = {
       url = "github:glide-browser/glide.nix";
@@ -43,8 +47,9 @@
     home-manager,
     hyprland,
     hyprland-plugins,
-    hyprpanel,
     hyprlauncher,
+    hyprshutdown,
+    hyprpanel,
     glide, 
     catppuccin,
     ...
