@@ -16,7 +16,7 @@ in let
     # modules
     battery = couleur.yellow;
     bluetooth = couleur.sapphire;
-    cava = couleur.flamingo;
+    cava = couleur.teal;
     clock = couleur.green;
     cpu = couleur.red;
     cpuTemp = couleur.red;
@@ -24,8 +24,8 @@ in let
     disk = couleur.sky;
     hypridle = couleur.mauve;
     hyprsunset = couleur.peach;
-    media = couleur.flamingo;
-    network = couleur.rosewater;
+    media = couleur.teal;
+    network = couleur.flamingo;
     notification = couleur.lavender;
     osd = couleur.pink;
     ram = couleur.yellow;
@@ -34,9 +34,9 @@ in let
     windowtitle = couleur.lavender;
     workspaces = {
       active = couleur.lavender;
-      occupied = couleur.rosewater;
+      occupied = couleur.maroon;
       available = couleur.green;
-      hover = couleur.red;
+      hover = couleur.yellow;
 
     };
     #misc
@@ -361,7 +361,7 @@ in
               active = colors.workspaces.active;
               hover = colors.workspaces.hover;
               numbered_active_highlighted_text_color = couleur.mantle;
-              numbered_active_underline_color = couleur.pink;
+              numbered_active_underline_color = colors.workspaces.active;
             };
 
             modules.cava = {
