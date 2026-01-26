@@ -292,7 +292,7 @@
 
     nxchan = "sudo nix-channel";
     nxflake = "sudo nix flake";
-    nxfl = "sudoo nix flake --update";
+    nxfu = "sudo nix flake --update";
     nxsh = "nix-shell";
 
     nxconf = "sudo nano /etc/nixos/configuration.nix";
