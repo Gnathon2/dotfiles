@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     cava
     inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     olympus
     discord
@@ -35,33 +36,6 @@
     enable = true;
   };
 
-
-  catppuccin = {
-    enable = true;
-    accent = "maroon";
-    flavor = "mocha";
-
-    btop.enable = true;
-    ghostty.enable = true;
-    gtk.icon.enable = true;
-    hyprlock.enable = false;
-    vscode.profiles.default.enable = false;
-    # vscode.profiles.catppuccin = {
-    #   # can't use this because it locks .vscode/extensions/ which is no no
-    #   accent = "yellow";
-    #   settings = {
-    #     boldKeywords = true;
-    #     italicComments = true;
-    #     italicKeywords = true;
-    #     colorOverrides = {};
-    #     customUIColors = {};
-    #     workbenchMode = "default";
-    #     bracketMode = "rainbow";
-    #     extraBordersEnabled = false;
-    #   };
-    # };
-    
-  };
   
   gtk = {
     enable = true;
@@ -91,18 +65,25 @@
 
 
 
+
   programs.bash.enable = true;
+
   home.shellAliases = {
+    bn = "hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'";
+    re = "hyprshutdown -t 'Restarting...' --post-cmd 'reboot'";
+
     papier = "ghostty --class=pap.er -e";
     stream = "streamlink --player mpv";
     streambg = "streamlink --player mpv --player-args '--wayland-app-id=pap.er'";
     marex = "streamlink --player mpv twitch.tv/marex";
   };
+
+
   home.sessionVariables = {
   };
 
 
-  nixpkgs.config = import ../nixpkgs/config.nix;
+  
 
   home.file = {
 
@@ -123,15 +104,7 @@
   # manage.
   home.username = "hypruser";
   home.homeDirectory = "/home/hypruser";
-
-  # This value determines the Home Manager release that your configuration is
-  # compatible with. This helps avoid breakage when a new Home Manager release
-  # introduces backwards incompatible changes.
-  #
-  # You should not change this value, even if you update Home Manager. If you do
-  # want to update the value, then make sure to first check the Home Manager
-  # release notes.
   home.stateVersion = "25.05"; # Please read the comment before changing.
-
+  nixpkgs.config = import ../nixpkgs/config.nix;
   programs.home-manager.enable = true;
 }
