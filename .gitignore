@@ -22,10 +22,13 @@ hypr/
 hyprpanel/
 kitty/
 libreoffice/
+matplotlib/
 mozilla/
+mpv/
 neofetch/
 obsidian/
 pulse/
+procps/
 ranger/
 rofi/
 spicetify/
@@ -33,6 +36,7 @@ spotify/
 systemd/
 Thunar
 twt/
+wal/
 xfce4/
 background
 ensmble.conf    
