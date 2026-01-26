@@ -20,6 +20,7 @@
 - floating calculator
 - lit. note
 - vi complete suite (glide, ...)
+- [spotify_connect](github.com/aome510/spotify-player#spotify-connect)
 
 ## core
 - poweroff button
