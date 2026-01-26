@@ -30,13 +30,15 @@
     "markdown.preview.fontSize": 20,
     "editor.minimap.sectionHeaderFontSize": 12,
     "catppuccin.colorOverrides": {
+
         "macchiato": {
-            "base": "#000000",
-            "crust": "#000000",
-            "mantle": "#000000"
+            "base": "#0d1017",
+            // "mantle": "#000",
+            // "crust": "#000"
         }
     },
     "catppuccin.boldKeywords": true,
     "catppuccin.italicKeywords": false,
-    "catppuccin-icons.monochrome": true
+    "catppuccin-icons.monochrome": true,
+    "catppuccin.workbenchMode": "minimal"
 }
