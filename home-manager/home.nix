@@ -21,34 +21,46 @@
     inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
-  programs = {
-    vscode.enable = true;
+  programs.vscode.enable = true;
+  programs.btop = {
+    enable = true;
+    settings = {
+      theme_background = false;
+      true_color = true;
+    };
   };
+
 
   catppuccin = {
     enable = true;
     accent = "maroon";
     flavor = "mocha";
 
-    vscode.profiles.catppuccin = {
-      # can't use this because it locks .vscode/extensions/ which is no no
-      enable = false;
-      accent = "yellow";
-      settings = {
-        boldKeywords = true;
-        italicComments = true;
-        italicKeywords = true;
-        colorOverrides = {};
-        customUIColors = {};
-        workbenchMode = "default";
-        bracketMode = "rainbow";
-        extraBordersEnabled = false;
-      };
-    };
+    btop.enable = true;
+    ghostty.enable = true;
+    gtk.icon.enable = true;
+    hyprlock.enable = false;
+    vscode.profiles.default.enable = false;
+    # vscode.profiles.catppuccin = {
+    #   # can't use this because it locks .vscode/extensions/ which is no no
+    #   accent = "yellow";
+    #   settings = {
+    #     boldKeywords = true;
+    #     italicComments = true;
+    #     italicKeywords = true;
+    #     colorOverrides = {};
+    #     customUIColors = {};
+    #     workbenchMode = "default";
+    #     bracketMode = "rainbow";
+    #     extraBordersEnabled = false;
+    #   };
+    # };
+    
   };
   
   gtk = {
     enable = true;
+    colorScheme = "dark";
 
     # theme = {
     #   package = pkgs.flat-remix-gtk;
