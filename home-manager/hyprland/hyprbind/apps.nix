@@ -27,9 +27,11 @@
       "SUPER, M, exec, ghostty --class=pap.er -e cava"
 
       # "SUPER, W, exec, dmenu-wl_run"
-      "SUPER, W, exec, hyprlauncher"
+      "SUPER, W, exec, rofi -show drun"
+      "SUPER, X, exec, hyprlauncher"
       "SUPER, C, exec, code"
       # "SUPER, V, exec, $TUI \"cd~/visual2 && nix-shell\""
+      # "SUPER, B, exec, "
       "SUPER, N, exec, $TUI nano ./notes.txt"
 
       "SUPER, SPACE, exec, hyprpanel toggleWindow bar-0"
@@ -39,8 +41,8 @@
         "SUPER, SPACE, exec, hyprpanel toggleWindow bar-0"
     ];
 
-    bindo = [
-      "SUPER, SUPER, exec, rofi -show drun"
-    ];
+    # bindo = [
+    #   "SUPER, SUPER, exec, rofi -show drun"
+    # ];
   };
 }
