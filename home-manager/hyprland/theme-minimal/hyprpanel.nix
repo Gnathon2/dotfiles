@@ -132,8 +132,8 @@ in
 
 
         windowtitle = {
-          class_name = true;
-          custom_title = true;
+          class_name = false;
+          custom_title = false;
           label = true;
           icon = false;
           truncation = false;
