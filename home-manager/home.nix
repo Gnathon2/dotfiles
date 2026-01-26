@@ -22,12 +22,17 @@
   ];
 
   programs.vscode.enable = true;
+
   programs.btop = {
     enable = true;
     settings = {
       theme_background = false;
       true_color = true;
     };
+  };
+
+  programs.rofi = {
+    enable = true;
   };
 
 

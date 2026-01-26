@@ -40,7 +40,7 @@
     ];
 
     bindo = [
-      "SUPER, SUPER, exec, hyprlauncher"
+      "SUPER, SUPER, exec, rofi -show drun"
     ];
   };
 }
