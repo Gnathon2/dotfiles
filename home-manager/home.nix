@@ -4,7 +4,6 @@
   imports = [
     ./hyprland
     ./other
-    ./gaming.nix
   ];
 
   home.packages = with pkgs; [
