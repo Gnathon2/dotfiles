@@ -151,7 +151,6 @@
   programs = {
     hyprland.enable = true;
     hyprlock.enable = true;
-    kitty.enable = true;
     firefox.enable = true;
     thunar = {
       enable = true;
