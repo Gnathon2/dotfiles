@@ -4,24 +4,25 @@
   imports = [
     ./hyprland
     ./other
+    ./gaming.nix
   ];
 
   home.packages = with pkgs; [
-    cava
+    # cava
     inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.default
 
-    olympus
+    # olympus
     discord
-    graphviz
+    betterdiscordctl # just an installer | discord is still needed
+    # graphviz
     geogebra
-    # dmenu-wayland
-    cool-retro-term
+    dmenu-wayland
+    # cool-retro-term
     hyprlauncher
-
-    inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
+    # inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
-
   programs.vscode.enable = true;
 
   programs.btop = {
@@ -32,36 +33,16 @@
     };
   };
 
+  programs.cava = {
+    enable = true;
+  };
+
   programs.rofi = {
     enable = true;
   };
 
   
-  gtk = {
-    enable = true;
-    colorScheme = "dark";
-
-    # theme = {
-    #   package = pkgs.flat-remix-gtk;
-    #   name = "Flat-Remix-GTK-Grey-Darkest";
-    # };
-
-    # iconTheme = {
-    #   package = pkgs.adwaita-icon-theme;
-    #   name = "Adwaita";
-    # };
-
-    font = {
-      name = "Sans";
-      size = 11;
-    };
-
-    
-    cursorTheme = {
-      name = "custom";
-      size = 39;
-    };
-  };
+  
 
 
 

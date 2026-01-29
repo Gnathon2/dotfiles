@@ -25,6 +25,8 @@
 ## core
 - poweroff button
 - systemctl supend when closing laptop
+- hyprpolkit agent
+- fingerprint
 
 ## known bug
 - hypridle shaky (sleep mode is the issue)
@@ -32,7 +34,6 @@
 
 ## misc
 - see xtra dispactchers in hyprplugins for spotify
-- fprint
 - CURSORS
     ~/.local/share/icons/NomDuCurseur/
         index.theme

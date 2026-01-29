@@ -2,8 +2,8 @@
   description = "flake for home-manager";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,31 +14,23 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-
     hyprlauncher = {
       url = "github:hyprwm/hyprlauncher";
       inputs.hyprland.follows = "hyprland";
     };
-
     hyprshutdown = {
       url = "github:hyprwm/hyprshutdown";
       inputs.hyprland.follows = "hyprland";
     };
-
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    catppuccin.url = "github:catppuccin/nix";
 
-    glide = {
-      url = "github:glide-browser/glide.nix";
-    };
-
-    catppuccin = {
-      url = "github:catppuccin/nix";
-    };
-
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    glide.url = "github:glide-browser/glide.nix";
   };
 
   outputs = inputs @ {
@@ -50,8 +42,9 @@
     hyprlauncher,
     hyprshutdown,
     hyprpanel,
-    glide, 
     catppuccin,
+    zen-browser,
+    glide, 
     ...
   }:
 

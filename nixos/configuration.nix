@@ -89,8 +89,6 @@
 
     ## GUI ##
     ghostty
-    kitty # backup terminal
-    inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     # inputs.unstable.legacyPackages.${pkgs.system}.vscode
     # inputs.unstable.packages.${pkgs.system}.vscode
     
@@ -152,7 +150,7 @@
   programs = {
     hyprland.enable = true;
     hyprlock.enable = true;
-
+    kitty.enable = true;
     firefox.enable = true;
     thunar = {
       enable = true;
@@ -161,12 +159,12 @@
       ];
     };
 
-    steam = {
-     enable = true;
-     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-    };
+    # steam = {
+    #  enable = true;
+    #  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    #  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    #  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+    # };
   };
 
 
@@ -292,7 +290,7 @@
 
     nxchan = "sudo nix-channel";
     nxflake = "sudo nix flake";
-    nxfu = "sudo nix flake --update";
+    nxfu = "sudo nix flake update --flake";
     nxsh = "nix-shell";
 
     nxconf = "sudo nano /etc/nixos/configuration.nix";

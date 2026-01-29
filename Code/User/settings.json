@@ -22,7 +22,7 @@
     "workbench.editor.editorActionsLocation": "titleBar",
     "workbench.iconTheme": "catppuccin-macchiato",
     "chat.viewSessions.orientation": "stacked",
-    "catppuccin.accentColor": "yellow",
+    "catppuccin.accentColor": "peach",
     "debug.console.fontSize": 16,
     "terminal.integrated.fontSize": 16,
     "chat.editor.fontSize": 18,
@@ -40,5 +40,9 @@
     "catppuccin.boldKeywords": true,
     "catppuccin.italicKeywords": false,
     "catppuccin-icons.monochrome": true,
-    "catppuccin.workbenchMode": "minimal"
+    "catppuccin.workbenchMode": "minimal",
+    "python.analysis.typeCheckingMode": "standard",
+    "markdown.extension.print.theme": "dark",
+    "markdown-preview-enhanced.codeBlockTheme": "atom-dark.css",
+    "markdown-preview-enhanced.previewTheme": "atom-dark.css"
 }
