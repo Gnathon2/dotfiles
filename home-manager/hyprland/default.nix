@@ -31,18 +31,28 @@
       "hypridle"
     ];
 
-    windowrulev2 = [
-      "suppressevent maximize, class:.*"
-      "idleinhibit fullscreen, class:.*"
+    windowrule = [
+      # tricks
+      # (?i:re) case insensitive
 
-      "stayfocused, class:Code, title:^Open\sfile"
-      "workspace special:music, class:Spotify"
-      "float, title:^Picture-in-Picture"
-      "float, class:Matplotlib"
-      "float, class:.*mpv.*"
-      "pin, class:.*mpv.*"
-      "float, class:Qemu.*"
+
+      "suppress_event maximize, match:class .*"
+      # "idleinhibit fullscreen, match:class .*"
+
+      "float on, content video, match:class Picture-in-Picture"
+      "float on, match:class Matplotlib"
+      "float on, pin on, content video, match:class .*mpv.*"
+      "float on, match:class Qemu.*"
+
+      "float on, stay_focused on, match:class (?:code), match:title ^Open\sfile"
+
+      "workspace 4, match:class (?i:code), match:title negative:Open\sfile"
+      "workspace 5, match:class (?i:zen.*)"
+      "workspace 6, match:class (?i:obsidian)"
+      "workspace 9, match:class (?i:discord)"
+      "workspace music, match:class (?i:spotify)"
     ];
+
 
     cursor = {
       enable_hyprcursor = false;
