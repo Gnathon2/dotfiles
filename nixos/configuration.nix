@@ -12,9 +12,10 @@
   
 
   imports = [ 
-      # <home-manager/nixos>
-      ./hardware-configuration.nix # Include the results of the hardware scan.
-    ];
+    # <home-manager/nixos>
+    ./hardware-configuration.nix # Include the results of the hardware scan.
+    ./gaming.nix  
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -158,13 +159,6 @@
         tumbler
       ];
     };
-
-    # steam = {
-    #  enable = true;
-    #  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    #  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    #  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-    # };
   };
 
 
