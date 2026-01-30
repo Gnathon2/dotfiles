@@ -21,7 +21,20 @@
     hyprlauncher
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     # inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
+
+    clipse 
+    hyprshot
+    hyprpicker
+    hyprpolkitagent
+
+    twitch-tui
+    streamlink
+    mpv
+
+    spotify
+    # celluloid
   ];
+
   programs.vscode.enable = true;
 
   programs.btop = {
@@ -40,10 +53,9 @@
     enable = true;
   };
 
-  
-  
-
-
+  programs.obsidian = {
+    enable = true;
+  };
 
 
   programs.bash.enable = true;
