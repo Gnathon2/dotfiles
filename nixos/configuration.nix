@@ -35,17 +35,10 @@
     git
     gitflow 
     openconnect # pour le vpn
-    # python3Full
-    # clang 
-    # gnumake
-    # ocaml
-    # jdk21 #java
-    # jetbrains.idea-community #ide java
-
-    # libgcc # g++ 
-    # wireshark 
-    # wget # telecharge un fichier à un adresse donnée
   ];
+
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
 
   fonts.packages = with pkgs; [
     font-awesome
@@ -80,7 +73,7 @@
   
   programs.bash.shellAliases = {
     ## system
-    bn = "shutdown 0";
+    kys = "shutdown 0";
     re = "reboot";
     dodo = "systemctl suspend";
 
