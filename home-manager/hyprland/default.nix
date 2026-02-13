@@ -46,7 +46,7 @@
 
       "float on, stay_focused on, match:class (?:code), match:title ^Open\sfile"
 
-      "workspace 4, match:class (?i:code), match:title negative:Open\sfile"
+      # "workspace 4, match:class (?i:code), match:title negative:(?i:open)|.*.config|.*TNCY.*"
       "workspace 5, match:class (?i:zen.*)"
       "workspace 6, match:class (?i:obsidian)"
       "workspace 9, match:class (?i:discord)"
