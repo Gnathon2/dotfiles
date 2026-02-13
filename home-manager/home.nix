@@ -33,6 +33,8 @@
 
     spotify
     # celluloid
+
+    yt-dlp
   ];
 
   programs.vscode.enable = true;

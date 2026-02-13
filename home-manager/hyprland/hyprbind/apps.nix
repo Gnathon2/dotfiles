@@ -15,7 +15,8 @@
       "SUPER, E, exec, thunar" # file manager
       "SUPER, T, exec, kitty twt"
       "SUPER, I, exec, code ~/.config" #(F9)
-      "SUPER, O, exec, $TUI $wount && obsidian || obsidian"
+      # "SUPER, O, exec, $TUI $wount && obsidian || obsidian"
+      "SUPER, O, exec, $TUI $wount && code ~/Public/Documents/TNCY || code ~/Public/Documents/TNCY"
       "SUPER, P, exec, code ~/contest"
 
       "SUPER, Q, exec, ghostty"
