@@ -11,7 +11,7 @@
 
       "CONTROL SHIFT, Escape, exec, $TUI btop"
 
-      "SUPER, Z, exec, zen"
+      "SUPER, Z, exec, zen-beta"
       "SUPER, E, exec, thunar" # file manager
       "SUPER, T, exec, kitty twt"
       "SUPER, I, exec, code ~/.config" #(F9)
