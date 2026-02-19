@@ -53,5 +53,6 @@
     "theme-pink-candy.markdownSyntaxStyle": "alternate",
     "markdown.styles": [
         "md.css"
-    ]
+    ],
+    "markdown-preview-github-styles.colorTheme": "system"
 }
