@@ -8,6 +8,8 @@
     ./audio.nix
     ./gaming.nix 
     ./hyprland.nix 
+
+    ./tncy.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
