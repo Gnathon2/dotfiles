@@ -54,5 +54,6 @@
     "markdown.styles": [
         "md.css"
     ],
-    "markdown-preview-github-styles.colorTheme": "system"
+    "markdown-preview-github-styles.colorTheme": "system",
+    "update.mode": "none"
 }
