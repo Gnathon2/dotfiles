@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -31,6 +31,12 @@
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     glide.url = "github:glide-browser/glide.nix";
+
+    opera = {
+      url = "github:yisuidenghua/opera-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = inputs @ {
@@ -45,6 +51,7 @@
     catppuccin,
     zen-browser,
     glide, 
+    opera,
     ...
   }:
 
@@ -59,6 +66,11 @@
         modules = [ 
           ./home.nix
           catppuccin.homeModules.catppuccin
+          {
+            nixpkgs.overlays = [
+              opera.overlays.default
+            ];
+          }
           # { nixpkgs.overlays = [ inputs.hyprpanel.overlay ];} # potentially a bad idea
         ];
       };

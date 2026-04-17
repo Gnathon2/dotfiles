@@ -5,7 +5,7 @@
         "markdown": false,
         "scminput": false,
         "cpp": false,
-        "java": true,
+        "java": false,
         "nix": false,
         "python": false
     },
@@ -55,5 +55,21 @@
         "md.css"
     ],
     "markdown-preview-github-styles.colorTheme": "system",
-    "update.mode": "none"
+    "update.mode": "none",
+    "[bison]": {},
+    "files.associations": {
+        "*.jura": "java"
+    },
+    "makefile.configureOnOpen": false,
+    "[markdown]": {
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.unicodeHighlight.invisibleCharacters": false,
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
+    }
 }

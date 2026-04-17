@@ -10,6 +10,7 @@
     # cava
     inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.opera.packages.${pkgs.stdenv.hostPlatform.system}.opera-gx
 
     # olympus
     discord

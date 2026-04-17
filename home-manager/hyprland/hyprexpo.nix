@@ -1,8 +1,8 @@
-{pkgs, ...}:
+{pkgs, inputs, ...}:
 # workspaces overview
 {
   wayland.windowManager.hyprland = {
-    plugins = [pkgs.hyprlandPlugins.hyprexpo];
+    plugins = [inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprexpo];
     settings.exec-once = [
       "hyprctl plugin load '$HYPR_PLUGIN_DIR/lib/libhyprexpo.so'"
     ];

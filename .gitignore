@@ -15,9 +15,11 @@ discord/
 Electron/
 ensemble*/
 environment.d/
+fish/
 geogebra/
 ghostty/
 glide/
+google-chrome/
 gtk*/
 hypr/
 hyprpanel/
@@ -29,6 +31,7 @@ mpv/
 neofetch/
 obsidian/
 Olympus/
+opera-gx/
 pulse/
 procps/
 ranger/
@@ -39,6 +42,7 @@ spotify-player/
 systemd/
 Thunar
 twt/
+ViTE/
 wal/
 xfce4/
 background

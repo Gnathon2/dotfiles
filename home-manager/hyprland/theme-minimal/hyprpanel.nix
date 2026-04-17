@@ -181,7 +181,7 @@ in
           directories.enabled = false;
           stats.enabled = true;
           powermenu = {
-            avatar.image = "/home/hypruser/.config/fonds/canvas.png";
+            avatar.image = "/home/hypruser/.config/fonds/robot.jpg";
           };
           shortcuts = {
             enabled = true;
