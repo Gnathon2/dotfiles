@@ -9,7 +9,6 @@
     ./gaming.nix 
     ./hyprland.nix 
 
-    ./tncy.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -76,8 +75,7 @@
   programs.bash.shellAliases = {
     ## system
     kys = "shutdown 0";
-    re = "reboot";
-    dodo = "systemctl suspend";
+    tg = "systemctl suspend";
 
     wount = "sudo mount /dev/nvme0n1p3 /mnt/win";
     uwount = "sudo umount /mnt/win";

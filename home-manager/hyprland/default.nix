@@ -6,11 +6,11 @@
     ./hyprbind
     ./theme-minimal
 
-    ./hyprexpo.nix
+    # ./hyprexpo.nix
     ./hypridle.nix
-    ./hyprscrolling.nix
-    ./hyprsunset.nix
-    ./hyprwinwrap.nix 
+    # ./hyprscrolling.nix
+    # ./hyprsunset.nix
+    # ./hyprwinwrap.nix 
   ];
 
 
@@ -19,14 +19,14 @@
   
   wayland.windowManager.hyprland.settings =  {
     monitor = [
-      "eDP-1,prefferred, auto, 1"
-      "HDMI-A-1, prefferred, auto, 1, mirror, eDP-1" # duplicate
+      "eDP-1,preferred, auto, 1"
+      "HDMI-A-1, preferred, auto, 1, mirror, eDP-1" # duplicate
       ", preferred, auto, 1"
     ];
     
 
     exec-once = [
-      # "hyprpanel"
+      # "hyprpanel"monitor=eDP-1, 2560x1600@60, 0x0, 1
       "hyprctl setcursor custom 39"
       "hypridle"
     ];
