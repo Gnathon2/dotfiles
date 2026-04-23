@@ -3,7 +3,10 @@
 {
   imports = [
     ./hyprland
-    ./other
+    ./ghostty.nix
+    # ./fish.nix
+    ./theme.nix
+    ./zed.nix
   ];
 
   home.packages = with pkgs; [
@@ -23,7 +26,7 @@
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     # inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
 
-    clipse 
+    clipse
     hyprshot
     hyprpicker
     hyprpolkitagent
@@ -78,7 +81,7 @@
   };
 
 
-  
+
 
   home.file = {
 
