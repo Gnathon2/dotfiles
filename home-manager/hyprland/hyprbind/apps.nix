@@ -3,6 +3,8 @@
   wayland.windowManager.hyprland.settings = {
     "$TUI" = "ghostty -e";
     "$wount" = "sudo mount /dev/nvme0n1p3 /mnt/win";
+    "$IDE" = "zeditor";
+
     bind = [
        #(F11)
       ", XF86Calculator, exec, $TUI bc" #(F12)
@@ -11,13 +13,14 @@
 
       "CONTROL SHIFT, Escape, exec, $TUI btop"
 
+      "SUPER, A, exec, zeditor"
       "SUPER, Z, exec, zen-beta"
       "SUPER, E, exec, thunar" # file manager
-      "SUPER, T, exec, kitty twt"
-      "SUPER, I, exec, code ~/.config" #(F9)
+      "SUPER, T, exec, $TUI twt"
+      "SUPER, I, exec, $IDE ~/.config" #(F9)
       # "SUPER, O, exec, $TUI $wount && obsidian || obsidian"
       "SUPER, O, exec, $TUI $wount && code ~/Public/Documents/TNCY || code ~/Public/Documents/TNCY"
-      "SUPER, P, exec, code ~/contest"
+      "SUPER, P, exec, $IDE ~/contest"
 
       "SUPER, Q, exec, ghostty"
       "SUPER, S, exec, spotify"
@@ -37,7 +40,7 @@
 
       "SUPER, SPACE, exec, hyprpanel toggleWindow bar-0"
     ];
-  
+
     bindr = [ # release
         "SUPER, SPACE, exec, hyprpanel toggleWindow bar-0"
     ];
