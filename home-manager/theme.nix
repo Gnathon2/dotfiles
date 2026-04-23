@@ -1,10 +1,5 @@
 {...}:
 {
-  imports = [
-    ./ghostty.nix
-    # ./fish.nix
-  ];
-
   catppuccin = {
     enable = true;
     accent = "maroon";
