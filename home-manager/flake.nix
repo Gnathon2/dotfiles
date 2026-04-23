@@ -22,6 +22,11 @@
       url = "github:hyprwm/hyprshutdown";
       inputs.hyprland.follows = "hyprland";
     };
+    hyprpaper = {
+      url = "github:hyprwm/hyprpaper";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     hyprpanel = {
       url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,6 +52,7 @@
     hyprland-plugins,
     hyprlauncher,
     hyprshutdown,
+    hyprpaper,
     hyprpanel,
     catppuccin,
     zen-browser,

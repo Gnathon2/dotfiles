@@ -9,7 +9,7 @@
     # ./hyprexpo.nix
     ./hypridle.nix
     # ./hyprscrolling.nix
-    # ./hyprsunset.nix
+    ./hyprsunset.nix
     # ./hyprwinwrap.nix 
   ];
 
@@ -18,6 +18,10 @@
 
   
   wayland.windowManager.hyprland.settings =  {
+    # debug = {
+    #   disable_logs = false;
+    # };
+
     monitor = [
       "eDP-1,preferred, auto, 1"
       "HDMI-A-1, preferred, auto, 1, mirror, eDP-1" # duplicate
