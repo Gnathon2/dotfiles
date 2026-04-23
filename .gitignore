@@ -3,7 +3,6 @@ secret/
 
 .gitignore
 delink.sh
-fonds/
 
 BetterDiscord/
 bluetuith/
@@ -26,6 +25,7 @@ hyprpanel/
 kitty/
 libreoffice/
 matplotlib/
+media/
 mozilla/
 mpv/
 neofetch/
