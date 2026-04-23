@@ -11,8 +11,18 @@
     enable = true;
     package = inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.default;
     settings = {
-      preload = "~/.config/fonds/candy.png";
-      wallpaper = ",~/.config/fonds/candy.png";
+      splash = false;
+      wallpaper = let
+        wp = name: {
+          monitor = "";
+          path = "~/.config/media/" + name;
+          order = "random";
+          timeout = 0;
+          recursive = true;
+        };
+      in [
+        (wp "wallpaper/")
+      ];
     };
   };
 }
