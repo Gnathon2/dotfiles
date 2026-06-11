@@ -4,32 +4,32 @@
   imports = [
     ./hyprland
     ./ghostty.nix
+    ./gaming.nix
     # ./fish.nix
     ./theme.nix
     ./zed.nix
   ];
 
   home.packages = with pkgs; [
-    # cava
+    cava
     inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.opera.packages.${pkgs.stdenv.hostPlatform.system}.opera-gx
 
-    # olympus
     discord
-    betterdiscordctl # just an installer | discord is still needed
+    # betterdiscordctl # just an installer | discord is still needed
     # graphviz
-    geogebra
-    dmenu-wayland
+    # geogebra
+    # dmenu-wayland
     # cool-retro-term
     hyprlauncher
+    
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     # inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
 
-    clipse
+    # clipse
     hyprshot
     hyprpicker
-    hyprpolkitagent
+    # hyprpolkitagent
 
     twitch-tui
     streamlink
@@ -38,7 +38,7 @@
     spotify
     # celluloid
 
-    yt-dlp
+    # yt-dlp
   ];
 
   programs.vscode.enable = true;
@@ -59,12 +59,12 @@
     enable = true;
   };
 
-  programs.obsidian = {
-    enable = true;
-  };
+  # programs.obsidian = {
+  #   enable = true;
+  # };
 
 
-  programs.bash.enable = true;
+  programs.bash.enable = false; # mandotory for shell aliases
 
   home.shellAliases = {
     bn = "hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'";

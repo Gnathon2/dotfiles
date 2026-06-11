@@ -17,7 +17,7 @@
           monitor = "";
           path = "~/.config/media/" + name;
           order = "random";
-          timeout = 0;
+          timeout = 3600;
           recursive = true;
         };
       in [

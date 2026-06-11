@@ -5,7 +5,7 @@
     enable = true;
   };
   home.shellAliases = {
-    zed = "zeditor";
+    z = "zeditor";
   };
 
   home.packages = with pkgs; [

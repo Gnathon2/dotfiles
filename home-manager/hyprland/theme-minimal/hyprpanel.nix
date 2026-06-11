@@ -1,6 +1,6 @@
 { inputs, pkgs, ... } :
 
-let 
+let
   couleur = import ./colors.nix;
 in let
   colors = {
@@ -42,7 +42,7 @@ in let
     #misc
     scaling = 92;
   };
-in 
+in
 {
   programs.hyprpanel = {
     enable = true;
@@ -181,7 +181,7 @@ in
           directories.enabled = false;
           stats.enabled = true;
           powermenu = {
-            avatar.image = "/home/hypruser/.config/fonds/robot.jpg";
+            avatar.image = "/home/hypruser/.config/media/robot.jpg";
           };
           shortcuts = {
             enabled = true;
@@ -229,7 +229,7 @@ in
         active_monitor = false; # follow cursor
         cache_actions = false;
         clearDelay = 0;
-        displayedTotal = 100; 
+        displayedTotal = 100;
         hideCountWhenZero = true;
         show_total = true;
         showActionOnHover = true;
@@ -252,7 +252,7 @@ in
           dropdownGap = "2em";
           enableShadow = false;
           layer = "background";
-          location = "top"; # top | bottom 
+          location = "top"; # top | bottom
           outer_spacing = "0em";
           scaling = 100;
           transparent = false;
@@ -276,7 +276,7 @@ in
             style = "default";
 
             dashboard = {
-             background = colors.button_background; 
+             background = colors.button_background;
               border = colors.dashboard;
               icon = colors.dashboard;
             };
@@ -394,7 +394,7 @@ in
               text = colors.cpuTemp;
             };
           };
-          
+
           menus = {
             background = colors.background;
             border.size = "0em";

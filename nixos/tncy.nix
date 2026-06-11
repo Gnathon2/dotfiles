@@ -2,7 +2,9 @@
 
 {
   environment.systemPackages = with pkgs; [
-    framac
-    alt-ergo
+    # framac
+    # alt-ergo
+    # gitflow
+    openconnect # pour le vpn
   ];
 }

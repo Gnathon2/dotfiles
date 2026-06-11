@@ -15,7 +15,8 @@
 
 
   wayland.windowManager.hyprland.enable = true;
-
+  wayland.windowManager.hyprland.configType = "hyprlang";
+  
   
   wayland.windowManager.hyprland.settings =  {
     # debug = {
@@ -71,13 +72,13 @@
     
 
     dwindle = {
-      pseudotile = true;
+      # pseudotile = true;
       preserve_split = true;
     };
 
-    misc = {
-      vfr = true;
-    };
+    # misc = {
+    #   vfr = true;
+    # };
 
     master = {
       new_status = "slave";
@@ -96,9 +97,9 @@
       };
     };
 
-    device = {
-      name = "steelseries-steelseries-rival-3";
-      sensitivity = -.8;
-    };
+    #device = {
+    #  name = "steelseries-steelseries-rival-3";
+    #  sensitivity = -.8;
+    #};
   };
 }

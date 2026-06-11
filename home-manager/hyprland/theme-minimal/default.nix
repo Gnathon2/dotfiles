@@ -50,7 +50,7 @@
         sharp = false;
         color = "0xff000000";
         color_inactive = "0x80000000";
-        ignore_window = true;
+        # ignore_window = true;
       };
     };
 

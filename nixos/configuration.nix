@@ -1,13 +1,14 @@
 {config, pkgs, inputs, lib,  ...}:
 
 {
-  imports = [ 
+  imports = [
     # <home-manager/nixos>
     ./hardware-configuration.nix # Include the results of the hardware scan.
- 
+
     ./audio.nix
-    ./gaming.nix 
-    ./hyprland.nix 
+    # ./gaming.nix
+    ./hyprland.nix
+    ./tncy.nix
 
   ];
 
@@ -17,25 +18,23 @@
     ntfs3g # mount windows
     neofetch # distro logo
     lshw # info hardware
-    xorg.xev 
-    pulseaudio # provides pactl
+    xorg.xev # inputs
+    pulseaudio # pactl
     playerctl # media actions
 
     unzip
     zip
-    nix-index 
+    nix-index
     ncdu # tree du
     # poppler-utils # ?
     btop # task manager
     # nnn # file explorer
-    ranger # file explorer 
+    ranger # file explorer
     bc # calculator
     alsa-utils # alsamixer
     bluetuith
 
     git
-    gitflow 
-    openconnect # pour le vpn
   ];
 
   programs.direnv.enable = true;
@@ -60,7 +59,7 @@
     options snd-hda-intel model=ideapad
   ''; # wtf is that ?
 
-  
+  ## fingerprint
   systemd.services.fprintd = {
     wantedBy = [ "multi-user.target" ];
     serviceConfig.Type = "simple";
@@ -71,7 +70,7 @@
     # tod.enable = true;
     # tod.driver = pkgs.libfprint-2-tod1-goodix-550a;
   };
-  
+
   programs.bash.shellAliases = {
     ## system
     kys = "shutdown 0";
@@ -83,9 +82,13 @@
     ## nix
     nxrebuild = "sudo nixos-rebuild --flake /etc/nixos";
     nxre = "sudo nixos-rebuild --flake /etc/nixos --impure switch";
-    
+
     nxpoubelle = "sudo nix-collect-garbage";
     nxcg = "sudo nix-collect-garbage -d";
+    nxclean = '' home-manager expire-generations "-1 hour"
+      nix profile wipe-history 
+      sudo nix-collect-garbage -d
+      nix store optimise'';
 
     nxchan = "sudo nix-channel";
     nxflake = "sudo nix flake";
@@ -94,12 +97,12 @@
 
     nxconf = "sudo nano /etc/nixos/configuration.nix";
     nxhardware = "sudo nano /etc/nixos/hardware-configuration.nix";
-    
+
     nxhome = "home-manager";
     nxhm = "home-manager switch -b backup";
 
     vpn = "sudo openconnect -u e11726u@etu --authgroup='Universite-de-Lorraine' vpn.univ-lorraine.fr";
-  };  
+  };
 
   # FLAKE
   nix = {
@@ -107,7 +110,7 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-  }; 
+  };
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
 
   boot.loader.systemd-boot.enable = true;
@@ -147,7 +150,7 @@
     description = "thomas";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = [];
-  }; 
-  
+  };
+
   system.stateVersion = "25.05"; # Did you read the comment?
 }

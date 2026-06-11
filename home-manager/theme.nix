@@ -1,7 +1,8 @@
 {...}:
 {
   catppuccin = {
-    enable = true;
+    enable = false; # global toggle
+    autoEnable = true;
     accent = "maroon";
     flavor = "mocha";
 

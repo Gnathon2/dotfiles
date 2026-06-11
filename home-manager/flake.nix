@@ -35,12 +35,10 @@
     catppuccin.url = "github:catppuccin/nix";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    glide.url = "github:glide-browser/glide.nix";
+    
+    # glide.url = "github:glide-browser/glide.nix";
 
-    opera = {
-      url = "github:yisuidenghua/opera-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    
 
   };
 
@@ -56,8 +54,7 @@
     hyprpanel,
     catppuccin,
     zen-browser,
-    glide, 
-    opera,
+    # glide, 
     ...
   }:
 
@@ -72,11 +69,6 @@
         modules = [ 
           ./home.nix
           catppuccin.homeModules.catppuccin
-          {
-            nixpkgs.overlays = [
-              opera.overlays.default
-            ];
-          }
           # { nixpkgs.overlays = [ inputs.hyprpanel.overlay ];} # potentially a bad idea
         ];
       };

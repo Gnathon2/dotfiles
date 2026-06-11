@@ -37,7 +37,7 @@
       "SUPER, down, movefocus, d"
 
       "CONTROL SUPER, E, pin"
-      "CONTROL SUPER, H, togglesplit"
+      # "CONTROL SUPER, H, togglesplit"
       "CONTROL SUPER, D, pseudo,"
       "CONTROL SUPER, F, togglefloating"
       "CONTROL SUPER, G, togglegroup"

@@ -5,7 +5,7 @@
     enable = true; 
     settings = {
       background = "#000";
-      theme = "catppuccin-mocha";
+      # theme = "catppuccin-mocha";
       cursor-style = "block";
       confirm-close-surface = false;
       mouse-scroll-multiplier = 0.5;

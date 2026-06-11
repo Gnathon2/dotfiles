@@ -18,7 +18,7 @@
       };
 
       background = {
-        path = "~/.config/fonds/cp.png";
+        path = "~/.config/media/cp.png";
         color = "0xFF0000FF";
         blur_size = 4;
         blur_passes = 4;
