@@ -6,7 +6,7 @@
     ./hardware-configuration.nix # Include the results of the hardware scan.
 
     ./audio.nix
-    # ./gaming.nix
+    ./gaming.nix
     ./hyprland.nix
     ./tncy.nix
 
