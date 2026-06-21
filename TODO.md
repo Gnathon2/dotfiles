@@ -4,8 +4,7 @@
 - cool-retro-term
 - dmenu (> hyprlauncher unless i can `code feur` from hyprlauncher)
 
-### catppuccin 
-- ghostty
+### catppuccin
 - firefox (glide)
 - hyprlauncher if not guezz
 - vscode: some elements are weird (very bright textboxes)
@@ -19,7 +18,7 @@
 ## project
 - floating calculator
 - lit. note
-- vi complete suite (glide, ...)
+- vi complete suite (glide, vim ())
 - [spotify_connect](github.com/aome510/spotify-player#spotify-connect)
 
 ## core
@@ -29,7 +28,7 @@
 - fingerprint
 
 ## known bug
-- hypridle shaky (sleep mode is the issue)
+- hypridle shaky (sleep mode is the issue (not so sure))
 - can't manualy toggle hyprsunset
 
 ## misc
