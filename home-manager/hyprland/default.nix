@@ -13,6 +13,15 @@
     # ./hyprwinwrap.nix 
   ];
 
+  home.packages = with pkgs; [
+    inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.default
+    hyprlauncher
+    hyprshot
+    hyprpicker
+    # hyprpolkitagent
+  ];
+
 
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.configType = "hyprlang";
