@@ -2,40 +2,31 @@
 
 {
   imports = [
-    ./hyprland
-    ./ghostty.nix
-    ./gaming.nix
-    # ./fish.nix
     ./theme.nix
+    ./hyprland
+
+    # ./fish.nix
+    ./ghostty.nix
     ./zed.nix
+    
+    ./audio.nix
+    ./video.nix
+    ./gaming.nix
   ];
 
   home.packages = with pkgs; [
-    cava
-    inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default
-    inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.default
-
+    
     discord
     # betterdiscordctl # just an installer | discord is still needed
     # graphviz
     # geogebra
     # dmenu-wayland
     # cool-retro-term
-    hyprlauncher
-    
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
+    vivaldi
     # inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # clipse
-    hyprshot
-    hyprpicker
-    # hyprpolkitagent
-
-    twitch-tui
-    streamlink
-    mpv
-
-    spotify
     # celluloid
 
     # yt-dlp
@@ -51,9 +42,7 @@
     };
   };
 
-  programs.cava = {
-    enable = true;
-  };
+  
 
   programs.rofi = {
     enable = true;
@@ -98,8 +87,7 @@
 
   };
 
-    # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  # Home Manager needs a bit of information about you and the paths it should manage.
   home.username = "hypruser";
   home.homeDirectory = "/home/hypruser";
   home.stateVersion = "25.05"; # Please read the comment before changing.
