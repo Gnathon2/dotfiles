@@ -35,6 +35,16 @@
     catppuccin.url = "github:catppuccin/nix";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    caelestia = {
+      url = "github:caelestia-dots/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia/legacy-v4";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
     # glide.url = "github:glide-browser/glide.nix";
 
@@ -54,6 +64,8 @@
     hyprpanel,
     catppuccin,
     zen-browser,
+    caelestia,
+    noctalia,
     # glide, 
     ...
   }:
