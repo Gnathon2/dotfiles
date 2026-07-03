@@ -1,58 +1,59 @@
-{...}:
+{lib, ...}:
+let util = import ../lua_utils.nix {lib = lib;}; in
 {
   wayland.windowManager.hyprland.settings = {
-    bind = [
-      "SUPER, code:49, togglespecialworkspace, magic" #²
-      "SUPER, code:10, workspace, 1" #1
-      "SUPER, code:11, workspace, 2" 
-      "SUPER, code:12, workspace, 3"
-      "SUPER, code:13, workspace, 4"
-      "SUPER, code:14, workspace, 5"
-      "SUPER, code:15, workspace, 6"
-      "SUPER, code:16, workspace, 7"
-      "SUPER, code:17, workspace, 8"
-      "SUPER, code:18, workspace, 9" #9
-      "SUPER, code:19, workspace, 10" #0
-      "SUPER, code:20, togglespecialworkspace, " #°
+    bind = map util.bind [
+      { key = "SUPER + code:49"; dsp = "togglespecialworkspace, magic"; } #²
+      { key = "SUPER + code:10"; dsp = "workspace, 1"; } #1
+      { key = "SUPER + code:11"; dsp = "workspace, 2"; } 
+      { key = "SUPER + code:12"; dsp = "workspace, 3"; }
+      { key = "SUPER + code:13"; dsp = "workspace, 4"; }
+      { key = "SUPER + code:14"; dsp = "workspace, 5"; }
+      { key = "SUPER + code:15"; dsp = "workspace, 6"; }
+      { key = "SUPER + code:16"; dsp = "workspace, 7"; }
+      { key = "SUPER + code:17"; dsp = "workspace, 8"; }
+      { key = "SUPER + code:18"; dsp = "workspace, 9"; } #9
+      { key = "SUPER + code:19"; dsp = "workspace, 10"; } #0
+      { key = "SUPER + code:20"; dsp = "togglespecialworkspace, "; } #°
 
-      "SUPER ALT, code:49, movetoworkspace, special:magic"
-      "SUPER ALT, code:10, movetoworkspace, 1"
-      "SUPER ALT, code:11, movetoworkspace, 2"
-      "SUPER ALT, code:12, movetoworkspace, 3"
-      "SUPER ALT, code:13, movetoworkspace, 4"
-      "SUPER ALT, code:14, movetoworkspace, 5"
-      "SUPER ALT, code:15, movetoworkspace, 6"
-      "SUPER ALT, code:16, movetoworkspace, 7"
-      "SUPER ALT, code:17, movetoworkspace, 8"
-      "SUPER ALT, code:18, movetoworkspace, 9"
-      "SUPER ALT, code:19, movetoworkspace, 10"
-      "SUPER ALT, code:20, movetoworkspace, special"
+      { key = "SUPER ALT + code:49"; dsp = "movetoworkspace, special:magic"; }
+      { key = "SUPER ALT + code:10"; dsp = "movetoworkspace, 1"; }
+      { key = "SUPER ALT + code:11"; dsp = "movetoworkspace, 2"; }
+      { key = "SUPER ALT + code:12"; dsp = "movetoworkspace, 3"; }
+      { key = "SUPER ALT + code:13"; dsp = "movetoworkspace, 4"; }
+      { key = "SUPER ALT + code:14"; dsp = "movetoworkspace, 5"; }
+      { key = "SUPER ALT + code:15"; dsp = "movetoworkspace, 6"; }
+      { key = "SUPER ALT + code:16"; dsp = "movetoworkspace, 7"; }
+      { key = "SUPER ALT + code:17"; dsp = "movetoworkspace, 8"; }
+      { key = "SUPER ALT + code:18"; dsp = "movetoworkspace, 9"; }
+      { key = "SUPER ALT + code:19"; dsp = "movetoworkspace, 10"; }
+      { key = "SUPER ALT + code:20"; dsp = "movetoworkspace, special"; }
 
-      "SUPER, TAB, workspace, e-1"
-      "SUPER SHIFT, TAB, workspace, e+1, "
+      { key = "SUPER + TAB"; dsp = "workspace, e-1"; }
+      { key = "SUPER SHIFT + TAB"; dsp = "workspace, e+1, "; }
 
-      "SUPER, left, movefocus, l"
-      "SUPER, right, movefocus, r"
-      "SUPER, up, movefocus, u"
-      "SUPER, down, movefocus, d"
+      { key = "SUPER + left"; dsp = "movefocus, l"; }
+      { key = "SUPER + right"; dsp = "movefocus, r"; }
+      { key = "SUPER + up"; dsp = "movefocus, u"; }
+      { key = "SUPER + down"; dsp = "movefocus, d"; }
 
-      "CONTROL SUPER, E, pin"
-      # "CONTROL SUPER, H, togglesplit"
-      "CONTROL SUPER, D, pseudo,"
-      "CONTROL SUPER, F, togglefloating"
-      "CONTROL SUPER, G, togglegroup"
-      "CONTROL SUPER, O, exec, \"$(if hyprctl getoption decoration:blur:ignore_opacity | grep 1; then hyprctl keyword decoration:blur:ignore_opacity false; else hyprctl keyword decoration:blur:ignore_opacity true; fi)\""
-      "CONTROL SUPER, K, exec, hyprctl keyword general:layout dwindle"
-      "CONTROL SUPER, M, exec, hyprctl keyword general:layout master"
+      { key = "CONTROL SUPER + E"; dsp = "pin"; }
+      # { key = "CONTROL SUPER + H"; dsp = "togglesplit"; }
+      { key = "CONTROL SUPER + D"; dsp = "pseudo,"; }
+      { key = "CONTROL SUPER + F"; dsp = "togglefloating"; }
+      { key = "CONTROL SUPER + G"; dsp = "togglegroup"; }
+      { key = "CONTROL SUPER + O"; dsp = "exec, \"$(if hyprctl getoption decoration:blur:ignore_opacity | grep 1; then hyprctl keyword decoration:blur:ignore_opacity false; else hyprctl keyword decoration:blur:ignore_opacity true; fi)\""; }
+      { key = "CONTROL SUPER + K"; dsp = "exec, hyprctl keyword general:layout dwindle"; }
+      { key = "CONTROL SUPER + M"; dsp = "exec, hyprctl keyword general:layout master"; }
 
-      "CONTROL SUPER, mouse_down, workspace, e+1"
-      "CONTROL SUPER, mouse_up, workspace, e+1"
+      { key = "CONTROL SUPER + mouse_down"; dsp = "workspace, e+1"; }
+      { key = "CONTROL SUPER + mouse_up"; dsp = "workspace, e+1"; }
     ];
     binds.drag_threshold = 10;
 
     bindm = [
-      "CONTROL SUPER, A, movewindow" #leftclick
-      "CONTROL SUPER, Z, resizewindow" #rightclick
+      { key = "CONTROL SUPER + A"; dsp = "movewindow"; } #leftclick
+      { key = "CONTROL SUPER + Z"; dsp = "resizewindow"; } #rightclick
     ];
     
     gesture = [

@@ -237,8 +237,8 @@ hl.gesture({
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 hl.device({
-    name        = "steelseries-rival5",
-    sensitivity = -1,
+    name        = "steelseries-steelseries-rival-5",
+    sensitivity = -0.0,
 })
 
 
