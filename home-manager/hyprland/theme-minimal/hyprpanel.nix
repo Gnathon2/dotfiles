@@ -45,7 +45,7 @@ in let
 in
 {
   programs.hyprpanel = {
-    enable = true;
+    enable = false;
     package = inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default;
     settings = {
       terminal = "ghostty";

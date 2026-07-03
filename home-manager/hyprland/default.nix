@@ -43,6 +43,7 @@
       # "hyprpanel"monitor=eDP-1, 2560x1600@60, 0x0, 1
       "hyprctl setcursor custom 39"
       "hypridle"
+      "noctalia"
     ];
 
     windowrule = [
@@ -99,7 +100,7 @@
       kb_layout = "fr";
       numlock_by_default = true;
       follow_mouse = 1; #focus
-      sensitivity = -.2;
+      sensitivity = -0.2;
       touchpad = {
         scroll_factor = 0.2;
         natural_scroll = true;

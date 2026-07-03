@@ -1,4 +1,4 @@
-{inputs, ...}:
+{...}:
 
 {
   programs.ghostty = {
@@ -17,6 +17,15 @@
         "performable:ctrl+c=copy_to_clipboard"
         "ctrl+v=paste_from_clipboard" 
       ];
+    };
+  };
+
+  programs.foot = {
+    enable = true;
+    settings = {
+      cursor = {
+        style = "block";
+      };
     };
   };
 }

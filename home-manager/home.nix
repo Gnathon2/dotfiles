@@ -3,7 +3,7 @@
 {
   imports = [
     ./theme.nix
-    ./hyprland
+    ./hyprland-lua
 
     # ./fish.nix
     ./ghostty.nix
@@ -12,10 +12,12 @@
     ./audio.nix
     ./video.nix
     ./gaming.nix
+
+    #./noctalia.nix
   ];
 
   home.packages = with pkgs; [
-    
+    kitty    
     discord
     # betterdiscordctl # just an installer | discord is still needed
     # graphviz
