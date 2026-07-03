@@ -1,0 +1,53 @@
+{...}:
+{
+  wayland.windowManager.hyprland.settings = {
+    #"$TUI" = "ghostty -e";
+    #"$wount" = "sudo mount /dev/nvme0n1p3 /mnt/win";
+    #"$IDE" = "zeditor";
+
+    #"local TUI" = "ghostty -e";
+    #"local IDE" = "zeditor";
+    
+
+    bind = [
+       #(F11)
+      ", XF86Calculator, exec, $TUI bc" #(F12)
+      ", Print, exec, hyprshot -o ~/Pics/screenshots -m region"
+      "SHIFT, Print, exec, hyprshot -o ~/Pics/screenshots -m window"
+
+      "CONTROL SHIFT, Escape, exec, $TUI btop"
+
+      "SUPER, A, exec, kitty"
+      "SUPER, Z, exec, zen-beta"
+      "SUPER, E, exec, thunar" # file manager
+      "SUPER, R, exec, $TUI ranger"
+      "SUPER, T, exec, $TUI twt"
+      "SUPER, I, exec, $IDE ~/.config" #(F9)
+      # "SUPER, O, exec, $TUI $wount && obsidian || obsidian"
+      "SUPER, O, exec, $TUI $wount && code ~/Public/Documents/TNCY || code ~/Public/Documents/TNCY"
+      "SUPER, P, exec, code ~/contest"
+
+      "SUPER, Q, exec, ghostty"
+      # "SUPER, S, exec, spotify"
+      "SUPER, D, exec, discord"
+      "SUPER, F, exec, firefox"
+      "SUPER, G, exec, glide"
+      # L
+      "SUPER, M, exec, ghostty --class=pap.er -e cava"
+
+      # "SUPER, W, exec, dmenu-wl_run"
+      "SUPER, W, exec, rofi -show drun"
+      "SUPER, X, exec, zeditor"
+      "SUPER, C, exec, code"
+      # "SUPER, V, exec, $TUI \"cd~/visual2 && nix-shell\""
+      # "SUPER, B, exec, "
+      "SUPER, N, exec, $TUI nano ./notes.txt"
+
+      "SUPER, SPACE, exec, hyprpanel toggleWindow bar-0"
+    ];
+
+    bindr = [ # release
+      "SUPER, SPACE, exec, hyprpanel toggleWindow bar-0"
+    ];
+  };
+}
