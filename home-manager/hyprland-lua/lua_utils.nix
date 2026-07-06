@@ -1,8 +1,8 @@
 {lib} :
 {
-  bind = {key, dsp} : {_args = [key (lib.generators.mkLuaInline dsp)]; };
+  bind = {key, dsp, flg ? {}} : {_args = [key (lib.generators.mkLuaInline ("hl.dsp." + dsp)) flg]; };
 
   exec_cmd = cmd : "hl.dsp.exec_cmd(\"" + cmd + "\")";
 
-  arg = b : (a : b + "(\"" + a + "\")"); 
+  arg = dsp : (arg : dsp + "(\"" + arg + "\")"); 
 }

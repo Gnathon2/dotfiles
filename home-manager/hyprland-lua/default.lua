@@ -229,7 +229,7 @@ hl.config({
 })
 
 hl.gesture({
-    fingers = 4,
+    fingers = 3,
     direction = "horizontal",
     action = "workspace"
 })
