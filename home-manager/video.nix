@@ -3,7 +3,7 @@
 { 
   home.packages = with pkgs; [
     twitch-tui
-    streamlink
+    # streamlink # broken as of july 2026
     mpv
   ];
 }

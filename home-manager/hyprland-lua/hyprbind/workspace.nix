@@ -56,7 +56,10 @@ let util = import ../lua_utils.nix {lib = lib;}; in
     ];
     
     gesture = [
+      {fingers = 4; direction = "vertical"; invert=true; action ="scroll_move";}
       {fingers = 4; direction = "horizontal"; action ="workspace";}
+      # {fingers = 4; direction = "horizontal"; action ="scroll_move";}
+      # {fingers = 4; direction = "horizontal"; action ="scroll_move";}
     ];
   };
 }

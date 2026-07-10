@@ -4,31 +4,43 @@
   imports = [
     ./hyprpaper.nix
     ./hyprlock.nix
-    ./hyprpanel.nix
+    # ./hyprpanel.nix
   ];
   wayland.windowManager.hyprland.settings = {
-    general = {
+
+    config.general = {
       gaps_in = 0;
       gaps_out = 0;
+
       border_size = 0;
-      hover_icon_on_border = false;
-      resize_on_border = false;
-      allow_tearing = false;
+      col = {
+        active_border = "0xffff00000";
+      };
+      
+      layout = "scrolling";
+      
+      resize_on_border = false;      
+      allow_tearing = true;
+
       snap = {
         enabled = true;
         border_overlap = true;
       };
     };
 
-    decoration = {
+    config.decoration = {
       rounding = 0;
+      rounding_power = 4;
+      
       fullscreen_opacity = 1;
       active_opacity = 1;
       inactive_opacity = 1;
 
-      dim_special = .6;
+      dim_special = 0.6;
       dim_inactive = false;
-      dim_around = 0;
+      dim_around = 0.3;
+
+      border_part_of_window = false;
 
       blur = {
         enabled = false;
@@ -52,18 +64,26 @@
         color_inactive = "0x80000000";
         # ignore_window = true;
       };
+
+      glow = {
+        enabled = false;
+        range = 16;
+        render_power = 3;
+        color = "0xfffff000";
+        # color_inactive = "";
+      };
     };
 
-    misc = {
-      disable_hyprland_logo = true;
+    config.animations = {
+      enabled = true;
+      workspace_wraparound = true;
     };
 
-    windowrulev2 = [
-      # "opaque 1, class:.*mpv"
-      # "opacity .8, class:.*ghostty"
-      # "noblur, class:negative:.*ghostty"
-    ];
+    
 
+    # misc = {
+    #   disable_hyprland_logo = true;
+    # };
 
   };
 

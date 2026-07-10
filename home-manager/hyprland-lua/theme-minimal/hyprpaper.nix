@@ -1,11 +1,12 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 
+let util = import ../lua_utils.nix {lib = lib;}; in
 {
   home.packages = with pkgs; [
     inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
-  wayland.windowManager.hyprland.settings.exec-once = [
-    "hyprpaper"
+  wayland.windowManager.hyprland.settings.on = [
+    (util.on_start "hyprpaper")
   ];
   services.hyprpaper = {
     enable = true;

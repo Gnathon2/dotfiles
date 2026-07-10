@@ -1,7 +1,9 @@
-{...}:
+{lib, ...}:
+
+let util = import ../lua_utils.nix {lib = lib;}; in
 {
-  wayland.windowManager.hyprland.settings.exec-once = [
-    "hyprlock"
+  wayland.windowManager.hyprland.settings.on = [
+    (util.on_start "hyprlock")
   ];
   programs.hyprlock = {
     enable = true;

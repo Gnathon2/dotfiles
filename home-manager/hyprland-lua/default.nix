@@ -1,21 +1,16 @@
 { inputs, pkgs, lib, ...}:
 
 
-let 
-  on_start = some_cmd : 
-    let func = lib.generators.mkLuaInline 
-      ("function () hl.exec_cmd(\"" + some_cmd + "\") end"); 
-    in { _args = ["hyprland.start" func]; };
-in
+let util = import ./lua_utils.nix {lib = lib;}; in
 {
   imports = [
     ./hyprbind
-    # ./theme-minimal
+    ./theme-minimal
+    ./layout.nix
 
     # ./hyprexpo.nix
     # ./hypridle.nix
-    # ./hyprscrolling.nix
-    # ./hyprsunset.nix
+    ./hyprsunset.nix
     # ./hyprwinwrap.nix 
   ];
 
@@ -39,6 +34,28 @@ in
     #   disable_logs = false;
     # };
     
+    on = [
+      (util.on_start "hyprctl setcursor custom 39")
+    ];
+    
+  
+    window_rule = [
+      # tricks:  (?i:re) case insensitive
+       
+      # { match.class = ".*"; maximize = true; 
+      #   # idle_inhibit = "fullsceen";
+      # }
+      { match.class = "i?:picture-in-picture"; float = true; }
+      { match.class = "Matplotlib"; float = true; }
+      { match.class = ".*mpv.*"; pin = true; float = true; }
+
+      { match.class = "i?dev.zed.*"; workspace = "3"; }
+      { match.class = "i?:zen.*"; workspace = "5"; }
+      { match.class = "i?:obsidian"; workspace = "6"; }
+      { match.class = "i?:discord.*"; workspace = "9"; }
+      { match.class = "i?:spotify.*"; workspace = "music"; }
+    ];
+
     monitor = {
       output = "";
       mode = "preferred";
@@ -55,34 +72,12 @@ in
         scroll_factor = 0.2;
         natural_scroll = true;
       };
+    };   
+
+
+    config.cursor = {
+      enable_hyprcursor = false;
     };
-
-    on = [
-      (on_start "hyprctl setcursor custom 39")
-    ];
-    
-  
-    window_rule = [
-      # tricks:  (?i:re) case insensitive
-       
-      { match.class = ".*"; maximize = true; 
-        # idle_inhibit = "fullsceen";
-      }
-      { match.class = "i?:picture-in-picture"; float = true; }
-      { match.class = "Matplotlib"; float = true; }
-      { match.class = ".*mpv.*"; pin = true; float = true; }
-
-      { match.class = "i?dev.zed.*"; workspace = "3"; }
-      { match.class = "i?:zen.*"; workspace = "5"; }
-      { match.class = "i?:obsidian"; workspace = "6"; }
-      { match.class = "i?:discord.*"; workspace = "9"; }
-      { match.class = "i?:spotify.*"; workspace = "music"; }
-    ];
-
-
-    #cursor = {
-    #  enable_hyprcursor = false;
-    #};
 
     # env = [
     #   "XCURSOR_THEME,bibata"
@@ -92,26 +87,17 @@ in
     # ];
     
 
-    config.dwindle = {
-      # pseudotile = true;
-      preserve_split = true;
+    config.xwayland = {
+      force_zero_scaling = true;
     };
+    
+    config.opengl.nvidia_anti_flicker = false;
 
-    # misc = {
-    #   vfr = true;
-    # };
-
-    config.master = {
-      new_status = "slave";
-      new_on_active = "after";
-      allow_small_split = false;
+    config.ecosystem = {
+      no_update_news = true;
+      no_donation_nag = true;
     };
-
-
-    #device = {
-    #  name = "steelseries-steelseries-rival-3";
-    #  sensitivity = -.8;
-    #};
+    
   };
 
   wayland.windowManager.hyprland.extraLuaFiles = {
