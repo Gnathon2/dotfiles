@@ -15,7 +15,7 @@ let util = import ../lua_utils.nix {lib = lib;}; in
     ];
 
     config.binds = {
-      allow_workspace_cycle = true;
+      allow_workspace_cycles = true;
     };
 
     config.gestures = {

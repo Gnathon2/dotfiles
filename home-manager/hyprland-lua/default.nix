@@ -75,9 +75,9 @@ let util = import ./lua_utils.nix {lib = lib;}; in
     };   
 
 
-    config.cursor = {
-      enable_hyprcursor = false;
-    };
+    # config.cursor = {
+    #   enable_hyprcursor = false;
+    # };
 
     # env = [
     #   "XCURSOR_THEME,bibata"
