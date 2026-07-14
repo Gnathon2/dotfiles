@@ -1,10 +1,10 @@
 {lib} :
 {
-  bind = {key, dsp, flg ? {}} : {_args = [key (lib.generators.mkLuaInline ("hl.dsp." + dsp)) flg]; };
+  bind = {key, dsp, flg ? {}} : {_args = [key (lib.generators.mkLuaInline "hl.dsp.${dsp}") flg]; };
 
-  exec_cmd = cmd : "hl.dsp.exec_cmd(\"" + cmd + "\")";
+  exec_cmd = cmd : "hl.dsp.exec_cmd(\"${cmd}\")";
 
-  arg = dsp : (arg : dsp + "(\"" + arg + "\")"); 
+  arg = dsp : (arg : "${dsp}(\"${arg}\")"); 
 
   on_start = some_cmd : 
     let func = lib.generators.mkLuaInline 

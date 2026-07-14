@@ -1,53 +1,44 @@
 {lib, ...}:
+let util = import ../lua_utils.nix {lib = lib;}; in
+let TUI = "ghostty -e"; in
+let IDE = "zeditor"; in
+let dspexc = cmd : util.arg "exec_cmd" cmd; in
 {
   wayland.windowManager.hyprland.settings = {
-    #"$TUI" = "ghostty -e";
     #"$wount" = "sudo mount /dev/nvme0n1p3 /mnt/win";
-    #"$IDE" = "zeditor";
-
-    #"local TUI" = "ghostty -e";
-    #"local IDE" = "zeditor";
-    TUI = {_var = "ghostty -e";};
     
-    bind = [
-       #(F11)
-      { _args = [" + XF86Calculator" (lib.mkLuaInline "hl.dsp.exec_cmd(TUI .. \" bc\")")]; } #(F12)
-      { _args = [" + Print" (lib.mkLuaInline "hl.dsp.exec_cmd(\"hyprshot -o ~/Pics/screenshots -m region\")")]; }
-      { _args = ["SHIFT + Print" (lib.mkLuaInline "hl.dsp.exec_cmd(\"hyprshot -o ~/Pics/screenshots -m window\")")]; }
+    bind = map util.bind [
+      {key = " + XF86Calculator"; dsp = dspexc "${TUI} bc"; } #(F12)
+      {key = " + Print"; dsp = dspexc "hyprshot -o ~/Pics/screenshots -m region"; }
+      {key = "SHIFT + Print"; dsp = dspexc "hyprshot -o ~/Pics/screenshots -m window"; }
 
-      # "CONTROL SHIFT, Escape, exec, $TUI btop"
+      {key = "CONTROL + SHIFT + Escape"; dsp = dspexc "${TUI} btop"; }
 
-      { _args = ["SUPER + A" (lib.mkLuaInline "hl.dsp.exec_cmd(\"kitty\")")]; }
-      { _args = ["SUPER + Z" (lib.mkLuaInline "hl.dsp.exec_cmd(\"zen-beta\")")]; }
-      { _args = ["SUPER + E" (lib.mkLuaInline "hl.dsp.exec_cmd(\"thunar\")")]; } # file manager
-      { _args = ["SUPER + R" (lib.mkLuaInline "hl.dsp.exec_cmd(\"$TUI ranger\")")]; }
-      { _args = ["SUPER + T" (lib.mkLuaInline "hl.dsp.exec_cmd(\"$TUI twt\")")]; }
-      { _args = ["SUPER + I" (lib.mkLuaInline "hl.dsp.exec_cmd(\"$IDE ~/.config\")")]; } #(F9)
-      # { _args = ["SUPER + O" (lib.mkLuaInline "hl.dsp.exec_cmd(\"$TUI $wount && obsidian || obsidian\")")]; }
-      { _args = ["SUPER + O" (lib.mkLuaInline "hl.dsp.exec_cmd(\"$TUI $wount && code ~/Public/Documents/TNCY || code ~/Public/Documents/TNCY\")")]; }
-      { _args = ["SUPER + P" (lib.mkLuaInline "hl.dsp.exec_cmd(\"code ~/contest\")")]; }
+      # A = kitty
+      {key = "SUPER + Z"; dsp = dspexc "zen-beta"; }
+      {key = "SUPER + E"; dsp = dspexc "thunar"; } # file manager
+      {key = "SUPER + R"; dsp = dspexc "${TUI} ranger"; }
+      {key = "SUPER + T"; dsp = dspexc "${TUI} twt"; }
+      {key = "SUPER + I"; dsp = dspexc "${IDE} ~/.config"; } #(F9)
+      # {key = "SUPER + O"; dsp = dspexc "${TUI} $wount && obsidian || obsidian"; }
+      # {key = "SUPER + O"; dsp = dspexc "${TUI} $wount && code ~/Public/Documents/TNCY || code ~/Public/Documents/TNCY"; }
+      {key = "SUPER + P"; dsp = dspexc "code ~/contest"; }
 
-      { _args = ["SUPER + Q" (lib.mkLuaInline "hl.dsp.exec_cmd(\"ghostty\")")]; }
-      # { _args = ["SUPER + S" (lib.mkLuaInline "hl.dsp.exec_cmd(\"spotify\")")]; }
-      { _args = ["SUPER + D" (lib.mkLuaInline "hl.dsp.exec_cmd(\"discord\")")]; }
-      { _args = ["SUPER + F" (lib.mkLuaInline "hl.dsp.exec_cmd(\"firefox\")")]; }
-      { _args = ["SUPER + G" (lib.mkLuaInline "hl.dsp.exec_cmd(\"glide\")")]; }
+      {key = "SUPER + Q"; dsp = dspexc "ghostty"; }
+      {key = "SUPER + S"; dsp = dspexc "spotify"; }
+      {key = "SUPER + D"; dsp = dspexc "discord"; }
+      {key = "SUPER + F"; dsp = dspexc "firefox"; }
+      {key = "SUPER + G"; dsp = dspexc "glide"; }
       # L
-      { _args = ["SUPER + M" (lib.mkLuaInline "hl.dsp.exec_cmd(\"ghostty --class=pap.er -e cava\")")]; }
+      # {key = "SUPER + M"; dsp = dspexc "ghostty --class=pap.er -e cava"; }
 
       # "SUPER, W, exec, dmenu-wl_run"
-      { _args = ["SUPER + W" (lib.mkLuaInline "hl.dsp.exec_cmd(\"rofi -show drun\")")]; }
-      { _args = ["SUPER + X" (lib.mkLuaInline "hl.dsp.exec_cmd(\"zeditor\")")]; }
-      { _args = ["SUPER + C" (lib.mkLuaInline "hl.dsp.exec_cmd(\"code\")")]; }
-      # "SUPER, V, exec, $TUI \"cd~/visual2 && nix-shell\""
-      # { _args = ["SUPER + B" (lib.mkLuaInline "hl.dsp.exec_cmd(\"\")")]; }
-      { _args = ["SUPER + N" (lib.mkLuaInline "hl.dsp.exec_cmd(\"$TUI nano ./notes.txt\")")]; }
-
-      { _args = ["SUPER + SPACE" (lib.mkLuaInline "hl.dsp.exec_cmd(\"hyprpanel toggleWindow bar-0\")")]; }
+      {key = "SUPER + W"; dsp = dspexc "rofi -show drun"; }
+      {key = "SUPER + X"; dsp = dspexc "zeditor"; }
+      {key = "SUPER + C"; dsp = dspexc "code"; }
+      {key = "SUPER + V"; dsp = dspexc "vivaldi"; }
+      # {key = "SUPER + B"; dsp = dspexc ""; }
+      {key = "SUPER + N"; dsp = dspexc "${TUI} nano ./notes.txt"; }
     ];
-
-    #bindr = [ # release
-    #  { _args = ["SUPER + SPACE" (lib.mkLuaInline "hl.dsp.exec_cmd(\"hyprpanel toggleWindow bar-0\")")]; }
-    #];
   };
 }
