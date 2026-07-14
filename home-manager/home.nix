@@ -25,7 +25,10 @@
     # dmenu-wayland
     # cool-retro-term
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
-    vivaldi
+    (vivaldi.override {
+      proprietaryCodecs = true;
+      enableWidevine = false;  
+    })
     # inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # clipse
