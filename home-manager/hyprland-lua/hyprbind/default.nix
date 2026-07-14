@@ -3,9 +3,9 @@
 let util = import ../lua_utils.nix {lib = lib;}; in
 {
   imports = [
-    ./workspace.nix
-    ./system.nix
     ./apps.nix
+    ./hardware.nix
+    ./windows.nix
   ];
 
   wayland.windowManager.hyprland.settings = {
