@@ -102,6 +102,7 @@ let util = import ./lua_utils.nix {lib = lib;}; in
 
   wayland.windowManager.hyprland.extraLuaFiles = {
     # "base".content = ./default.lua;
+    "func".content = ./hyprfunc.lua;
   };
 }
 
