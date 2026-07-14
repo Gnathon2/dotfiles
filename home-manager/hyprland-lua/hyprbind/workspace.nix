@@ -18,13 +18,14 @@ let util = import ../lua_utils.nix {lib = lib;}; in
       { key = "SUPER + code:19"; dsp = "focus({workspace = 10})"; } #0
       { key = "SUPER + code:20"; dsp = util.arg "workspace.toggle_special" ""; } #°
 
+      { key = "ALT + TAB"; dsp = "focus({urgent_or_last = true})"; }
       { key = "SUPER + TAB"; dsp = "focus({workspace = \"e-1\"})"; }
       { key = "SUPER + SHIFT + TAB"; dsp = "focus({workspace = \"e+1\"})"; }
       { key = "CONTROL + SUPER + mouse_down"; dsp = "focus({workspace = \"e-1\"})"; }
       { key = "CONTROL + SUPER + mouse_up"; dsp = "focus({workspace = \"e+1\"})"; }
 
-      { key = "SUPER + mouse_up"; dsp = "focus({direction = \"u\"})"; }
-      { key = "SUPER + mouse_down"; dsp = "focus({direction = \"d\"})"; }
+      { key = "SUPER + mouse_up"; dsp = "focus({direction = \"d\"})"; }
+      { key = "SUPER + mouse_down"; dsp = "focus({direction = \"u\"})"; }
       
       { key = "SUPER + left"; dsp = "focus({direction = \"l\"})"; }
       { key = "SUPER + right"; dsp = "focus({direction = \"r\"})"; }
