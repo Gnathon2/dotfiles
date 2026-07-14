@@ -42,7 +42,7 @@ let util = import ./lua_utils.nix {lib = lib;}; in
     window_rule = [
       # tricks:  (?i:re) case insensitive
        
-      # { match.class = ".*"; maximize = true; 
+      { match.class = ".*"; suppress_event = "maximize"; name = "suppress-maximize-event"; }
       #   # idle_inhibit = "fullsceen";
       # }
       { match.class = "i?:picture-in-picture"; float = true; }
@@ -101,7 +101,7 @@ let util = import ./lua_utils.nix {lib = lib;}; in
   };
 
   wayland.windowManager.hyprland.extraLuaFiles = {
-    "base".content = ./default.lua;
-    };
+    # "base".content = ./default.lua;
+  };
 }
 
