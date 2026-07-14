@@ -4,6 +4,7 @@ let util = import ../lua_utils.nix {lib = lib;}; in
   wayland.windowManager.hyprland.settings = {
     # binds.drag_threshold = 10;
     bind = map util.bind [
+      ### focus ### 
       { key = "SUPER + code:49"; dsp = util.arg "workspace.toggle_special" "magic"; } #²
       { key = "SUPER + code:10"; dsp = "focus({workspace = 1})"; } #1
       { key = "SUPER + code:11"; dsp = "focus({workspace = 2})"; } 
@@ -19,7 +20,18 @@ let util = import ../lua_utils.nix {lib = lib;}; in
 
       { key = "SUPER + TAB"; dsp = "focus({workspace = \"e-1\"})"; }
       { key = "SUPER + SHIFT + TAB"; dsp = "focus({workspace = \"e+1\"})"; }
+      { key = "CONTROL + SUPER + mouse_down"; dsp = "focus({workspace = \"e-1\"})"; }
+      { key = "CONTROL + SUPER + mouse_up"; dsp = "focus({workspace = \"e+1\"})"; }
 
+      { key = "SUPER + mouse_up"; dsp = "focus({direction = \"u\"})"; }
+      { key = "SUPER + mouse_down"; dsp = "focus({direction = \"d\"})"; }
+      
+      { key = "SUPER + left"; dsp = "focus({direction = \"l\"})"; }
+      { key = "SUPER + right"; dsp = "focus({direction = \"r\"})"; }
+      { key = "SUPER + up"; dsp = "focus({direction =\"u\"})"; }
+      { key = "SUPER + down"; dsp = "focus({direction = \"d\"})"; }
+      
+      ### move ###
       { key = "SUPER + ALT + code:49"; dsp = "window.move({workspace = \"special:magic\"})"; }
       { key = "SUPER + ALT + code:10"; dsp = "window.move({workspace = 1})"; } 
       { key = "SUPER + ALT + code:11"; dsp = "window.move({workspace = 2})"; }
@@ -34,10 +46,11 @@ let util = import ../lua_utils.nix {lib = lib;}; in
       { key = "SUPER + ALT + code:20"; dsp = "window.move({workspace = \"special:\"})"; }
 
       
-      { key = "SUPER + left"; dsp = "focus({direction = \"l\"})"; }
-      { key = "SUPER + right"; dsp = "focus({direction = \"r\"})"; }
-      { key = "SUPER + up"; dsp = "focus({direction =\"u\"})"; }
-      { key = "SUPER + down"; dsp = "focus({direction = \"d\"})"; }
+      ### other ### 
+      { key = "CONTROL + SUPER + A"; dsp = "window.drag()"; flg = {mouse = true;}; } #leftclick
+      { key = "SUPER + mouse:272"; dsp = "window.drag()"; flg = {mouse = true;}; }
+      { key = "CONTROL + SUPER + Z"; dsp = "window.resize()"; flg = {mouse = true;}; } #rightclick
+      { key = "SUPER + mouse:273"; dsp = "window.resize()"; flg = {mouse = true;}; }
 
       { key = "CONTROL + SUPER + E"; dsp = "window.pin()"; }
       # { key = "CONTROL SUPER + H"; dsp = "togglesplit"; }
@@ -48,11 +61,10 @@ let util = import ../lua_utils.nix {lib = lib;}; in
       # { key = "CONTROL SUPER + K"; dsp = "exec, hyprctl keyword general:layout dwindle"; }
       # { key = "CONTROL SUPER + M"; dsp = "exec, hyprctl keyword general:layout master"; }
 
-      # { key = "CONTROL SUPER + mouse_down"; dsp = "workspace, e+1"; }
-      # { key = "CONTROL SUPER + mouse_up"; dsp = "workspace, e+1"; }
+      
 
-      { key = "CONTROL + SUPER + A"; dsp = "window.drag()"; flg = {mouse = true;}; } #leftclick
-      { key = "CONTROL + SUPER + Z"; dsp = "window.resize()"; flg = {mouse = true;}; } #rightclick
+      
+      
     ];
     
     gesture = [

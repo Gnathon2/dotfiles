@@ -9,8 +9,8 @@ let dspexc = cmd : util.arg "exec_cmd" cmd; in
     
     bind = map util.bind [
       {key = " + XF86Calculator"; dsp = dspexc "${TUI} bc"; } #(F12)
-      {key = " + Print"; dsp = dspexc "hyprshot -o ~/Pics/screenshots -m region"; }
-      {key = "SHIFT + Print"; dsp = dspexc "hyprshot -o ~/Pics/screenshots -m window"; }
+      {key = " + XF86Cut"; dsp = dspexc "hyprshot -o ~/Pics/screenshots -m region"; }
+      {key = "SHIFT + XF86Cut"; dsp = dspexc "hyprshot -o ~/Pics/screenshots -m window"; }
 
       {key = "CONTROL + SHIFT + Escape"; dsp = dspexc "${TUI} btop"; }
 
