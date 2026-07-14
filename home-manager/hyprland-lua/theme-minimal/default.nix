@@ -17,7 +17,7 @@
         active_border = "0xffff00000";
       };
       
-      layout = "scrolling";
+      layout = "dwindle";
       
       resize_on_border = false;      
       allow_tearing = true;
