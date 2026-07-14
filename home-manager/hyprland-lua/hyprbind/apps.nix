@@ -29,7 +29,7 @@ let dspexc = cmd : util.arg "exec_cmd" cmd; in
       {key = "SUPER + D"; dsp = dspexc "discord"; }
       {key = "SUPER + F"; dsp = dspexc "firefox"; }
       {key = "SUPER + G"; dsp = dspexc "glide"; }
-      # L
+      {key = "SUPER + L"; dsp = dspexc "hyprlock"; }
       # {key = "SUPER + M"; dsp = dspexc "ghostty --class=pap.er -e cava"; }
 
       # "SUPER, W, exec, dmenu-wl_run"
