@@ -1,6 +1,6 @@
 {lib} :
 {
-  bind = {key, dsp, flg ? {}} : {_args = [key (lib.generators.mkLuaInline "hl.dsp.${dsp}") flg]; };
+  bind = {key, dsp ? "", flg ? {}, fnc ? null} : {_args = [key (lib.generators.mkLuaInline (if isNull fnc then "hl.dsp.${dsp}" else fnc)) flg]; };
 
   # exec_cmd = cmd : "hl.dsp.exec_cmd(\"${cmd}\")";
 

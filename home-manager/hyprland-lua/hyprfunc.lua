@@ -1,4 +1,4 @@
-local function toggle_layout()
+function toggle_layout()
   local current_layout = hl.get_config("general.layout")
     
   if current_layout == "dwindle" then

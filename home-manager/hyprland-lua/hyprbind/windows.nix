@@ -16,7 +16,7 @@ let util = import ../lua_utils.nix {lib = lib;}; in
       { key = "SUPER + code:17"; dsp = "focus({workspace = 8})"; }
       { key = "SUPER + code:18"; dsp = "focus({workspace = 9})"; } #9
       { key = "SUPER + code:19"; dsp = "focus({workspace = 10})"; } #0
-      { key = "SUPER + code:20"; dsp = util.arg "workspace.toggle_special" ""; } #°
+      { key = "SUPER + code:20"; dsp = "focus({workspace = \"name:0\"})"; } #°
 
       { key = "ALT + TAB"; dsp = "focus({urgent_or_last = true})"; }
       { key = "SUPER + TAB"; dsp = "focus({workspace = \"e-1\"})"; }
@@ -44,7 +44,7 @@ let util = import ../lua_utils.nix {lib = lib;}; in
       { key = "SUPER + ALT + code:17"; dsp = "window.move({workspace = 8})"; }
       { key = "SUPER + ALT + code:18"; dsp = "window.move({workspace = 9})"; }
       { key = "SUPER + ALT + code:19"; dsp = "window.move({workspace = 10})"; }
-      { key = "SUPER + ALT + code:20"; dsp = "window.move({workspace = \"special:\"})"; }
+      { key = "SUPER + ALT + code:20"; dsp = "window.move({workspace = \"name:0\"})"; }
 
       
       ### other ### 
@@ -59,19 +59,31 @@ let util = import ../lua_utils.nix {lib = lib;}; in
       { key = "CONTROL + SUPER + F"; dsp = "window.float()"; }
       { key = "CONTROL + SUPER + G"; dsp = "group.toggle()"; }
       # { key = "CONTROL SUPER + O"; dsp = "exec, \"$(if hyprctl getoption decoration:blur:ignore_opacity | grep 1; then hyprctl keyword decoration:blur:ignore_opacity false; else hyprctl keyword decoration:blur:ignore_opacity true; fi)\""; }
-      # { key = "CONTROL SUPER + K"; dsp = "exec, hyprctl keyword general:layout dwindle"; }
-      # { key = "CONTROL SUPER + M"; dsp = "exec, hyprctl keyword general:layout master"; }
-
-      
-
+      { key = "CONTROL + SUPER + L"; fnc = "toggle_layout"; }
       
       
     ];
     
     gesture = [
-      {fingers = 4; direction = "vertical"; invert=true; action ="scroll_move";}
-      {fingers = 4; direction = "horizontal"; action ="workspace";}
-      # {fingers = 4; direction = "horizontal"; action ="scroll_move";}
+      {fingers = 3; direction = "vertical"; action ="scroll_move";}
+      {fingers = 3; direction = "horizontal"; action ="workspace";}
+      
+      {fingers = 3; direction = "pinchout"; mods = "SHIFT"; action = "float";}
+      {fingers = 3; direction = "pinchin"; mods = "SHIFT"; action = "fullscreen";}
+      {fingers = 3; direction = "left"; mods = "SHIFT"; 
+        action = lib.generators.mkLuaInline "function() hl.dispatch(hl.dsp.window.move({ workspace = \"-1\", follow = true })) end";}
+      {fingers = 3; direction = "right"; mods = "SHIFT"; 
+        action = lib.generators.mkLuaInline "function() hl.dispatch(hl.dsp.window.move({ workspace = \"+1\", follow = true })) end";}
+      {fingers = 3; direction = "down"; mods = "SHIFT"; action = lib.generators.mkLuaInline "toggle_layout";}
+      # {fingers = 3; direction = "up"; mods = "SHIFT"; action = "hyprexpo";}
+      
+      {fingers = 4; direction = "swipe"; action = "move"; }
+      {fingers = 4; direction = "swipe"; mods = "SHIFT"; action = "resize"; }
+
+      {fingers = 4; direction = "pinch"; action ="cursorZoom"; mode="live";}
+      
+      # {fingers = 4; direction = "left"; action = ""; }
+      
       # {fingers = 4; direction = "horizontal"; action ="scroll_move";}
     ];
   };
