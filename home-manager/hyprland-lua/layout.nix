@@ -1,4 +1,4 @@
-{lib, ...}:
+{...}:
 
 {
 
@@ -8,7 +8,7 @@
     
       dwindle = {
         preserve_split = true;
-        smart_split = true;
+        smart_split = false;
       };
     
     
@@ -23,9 +23,5 @@
         column_width = 0.9;
       };
     };
-
-    bind = [
-      # { _args = ["CONTROL + SUPER + L" (lib.generators.mkLuaInline "toggle_layout")]; }
-    ];
   };
 }

@@ -54,14 +54,12 @@ let util = import ../lua_utils.nix {lib = lib;}; in
       { key = "SUPER + mouse:273"; dsp = "window.resize()"; flg = {mouse = true;}; }
 
       { key = "CONTROL + SUPER + E"; dsp = "window.pin()"; }
-      # { key = "CONTROL SUPER + H"; dsp = "togglesplit"; }
+      { key = "CONTROL + SUPER + H"; dsp = util.arg "layout" "togglesplit"; }
       { key = "CONTROL + SUPER + D"; dsp = "window.pseudo()"; }
       { key = "CONTROL + SUPER + F"; dsp = "window.float()"; }
       { key = "CONTROL + SUPER + G"; dsp = "group.toggle()"; }
       # { key = "CONTROL SUPER + O"; dsp = "exec, \"$(if hyprctl getoption decoration:blur:ignore_opacity | grep 1; then hyprctl keyword decoration:blur:ignore_opacity false; else hyprctl keyword decoration:blur:ignore_opacity true; fi)\""; }
-      { key = "CONTROL + SUPER + L"; fnc = "toggle_layout"; }
-      
-      
+      { key = "CONTROL + SUPER + L"; fnc = "toggle_layout"; }      
     ];
     
     gesture = [
