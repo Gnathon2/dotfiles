@@ -102,7 +102,17 @@ let util = import ./lua_utils.nix {lib = lib;}; in
 
   wayland.windowManager.hyprland.extraLuaFiles = {
     # "base".content = ./default.lua;
-    "func".content = ./hyprfunc.lua;
+    "func".content = ''
+      function toggle_layout()
+        local current_layout = hl.get_config("general.layout")
+          
+        if current_layout == "dwindle" then
+            hl.config({ general = { layout = "scrolling" } })
+        else
+            hl.config({ general = { layout = "dwindle" } })
+        end
+      end 
+    '';
   };
 }
 

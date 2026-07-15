@@ -25,7 +25,7 @@
     };
 
     bind = [
-      { _args = ["CONTROL + SUPER + L" (lib.generators.mkLuaInline "toggle_layout")]; }
+      # { _args = ["CONTROL + SUPER + L" (lib.generators.mkLuaInline "toggle_layout")]; }
     ];
   };
 }
