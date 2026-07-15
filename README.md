@@ -1,0 +1,7 @@
+nixos hyprland dotfiles 
+
+# Install 
+
+...
+
+# 

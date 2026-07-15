@@ -1,25 +1,24 @@
 # TODO
 
+- documentation
+
 ## ricing
-- cool-retro-term
-- dmenu (> hyprlauncher unless i can `code feur` from hyprlauncher)
+- cool-retro-term (bonus)
+- hyprland animations
+- bar / shell
 
 ### catppuccin
 - firefox (glide)
-- hyprlauncher if not guezz
 - vscode: some elements are weird (very bright textboxes)
 
-### hyprpanel
-- dropdown menus 
-- quick settings in dashboard (hyprsunset / hypridle)
-- underline color on workspaces
-- osd ?
 
 ## project
 - floating calculator
 - lit. note
 - vi complete suite (glide, vim ())
 - [spotify_connect](github.com/aome510/spotify-player#spotify-connect)
+- random color splash for hyprlock
+- cyberpunk theme
 
 ## core
 - poweroff button
