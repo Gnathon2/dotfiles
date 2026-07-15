@@ -10,4 +10,7 @@
     let func = lib.generators.mkLuaInline 
       ("function () hl.exec_cmd(\"" + some_cmd + "\") end"); 
     in { _args = ["hyprland.start" func]; };
+
+  curve = {name, type, points}: 
+    { _args = [name {type = type; points = points;}]; };
 }

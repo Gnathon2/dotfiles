@@ -2,6 +2,8 @@
 {
 
   imports = [
+    ./animations.nix
+    
     ./hyprpaper.nix
     ./hyprlock.nix
     # ./hyprpanel.nix
