@@ -13,7 +13,7 @@
     ./video.nix
     ./gaming.nix
 
-    #./noctalia.nix
+    # ./noctalia.nix
   ];
 
   home.packages = with pkgs; [
@@ -24,6 +24,7 @@
     # geogebra
     # dmenu-wayland
     # cool-retro-term
+    
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     (vivaldi.override {
       proprietaryCodecs = true;
@@ -36,6 +37,8 @@
 
     # yt-dlp
   ];
+
+  
 
   programs.vscode.enable = true;
 

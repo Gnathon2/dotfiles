@@ -1,5 +1,8 @@
 {
   inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    
+    
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,13 +19,28 @@
   };
 
   
-  outputs = inputs @ {
+  outputs = local-inputs @ {
     self,
+    nixpkgs,
     caelestia-cli,
     caelestia-shell,
     noctalia,
     ...
   }: {
-    homeModules.default = import ./default.nix;
+   
+    homeModules.default = {
+      _module.args = { inherit local-inputs; };
+      imports = [ ./default.nix ];
+    };
+
+    # {pkgs, ...}: { 
+    #   # _module.args = { inherit caelestia-shell; };
+    #   # imports = [./default.nix]; 
+
+    #   home.packages = with pkgs; [
+    #     inputs.caelestia-shell.packages."${stdenv.hostPlatform.system}".default
+    #     inputs.caelestia-cli.packages."${stdenv.hostPlatform.system}".default
+    #   ];
+    # };
   };
 }
