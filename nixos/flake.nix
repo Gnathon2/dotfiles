@@ -8,7 +8,7 @@
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
-
+    musnix  = { url = "github:musnix/musnix"; };
     # nixpkgs-python.url = "github:cachix/nixpkgs-python";
 
     # hyprland-plugins.url = "github:Hyprland/Hyprland-plugins?ref=main";    
@@ -19,7 +19,7 @@
       nixpkgs, 
       unstable,
       hyprland,
-      
+      musnix, 
       ...
   } @ inputs : 
   
@@ -29,6 +29,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
+          inputs.musnix.nixosModules.musnix
           ./configuration.nix
         ];
       };
