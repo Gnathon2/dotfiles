@@ -15,7 +15,6 @@ let util = import ./lua_utils.nix {lib = lib;}; in
   ];
 
   home.packages = with pkgs; [
-    inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.default
     hyprlauncher
     hyprshot
@@ -36,6 +35,7 @@ let util = import ./lua_utils.nix {lib = lib;}; in
     
     on = [
       (util.on_start "hyprctl setcursor custom 39")
+      (util.on_start "caelestia shell")
     ];
     
   
