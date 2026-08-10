@@ -63,16 +63,16 @@ let util = import ../lua_utils.nix {lib = lib;}; in
     ];
     
     gesture = [
-      {fingers = 3; direction = "vertical"; action ="scroll_move";}
-      {fingers = 3; direction = "horizontal"; action ="workspace";}
+      {fingers = 3; direction = "horizontal"; action ="scroll_move"; scale = 1.5;}
+      {fingers = 3; direction = "vertical"; action ="workspace";}
       
       {fingers = 3; direction = "pinchout"; mods = "SHIFT"; action = "float";}
       {fingers = 3; direction = "pinchin"; mods = "SHIFT"; action = "fullscreen";}
-      {fingers = 3; direction = "left"; mods = "SHIFT"; 
+      {fingers = 3; direction = "up"; mods = "SHIFT"; 
         action = lib.generators.mkLuaInline "function() hl.dispatch(hl.dsp.window.move({ workspace = \"-1\", follow = true })) end";}
-      {fingers = 3; direction = "right"; mods = "SHIFT"; 
+      {fingers = 3; direction = "down"; mods = "SHIFT"; 
         action = lib.generators.mkLuaInline "function() hl.dispatch(hl.dsp.window.move({ workspace = \"+1\", follow = true })) end";}
-      {fingers = 3; direction = "down"; mods = "SHIFT"; action = lib.generators.mkLuaInline "toggle_layout";}
+      {fingers = 3; direction = "right"; mods = "SHIFT"; action = lib.generators.mkLuaInline "toggle_layout";}
       # {fingers = 3; direction = "up"; mods = "SHIFT"; action = "hyprexpo";}
       
       {fingers = 4; direction = "swipe"; action = "move"; }

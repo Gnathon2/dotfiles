@@ -13,13 +13,14 @@
     config.general = {
       gaps_in = 0;
       gaps_out = 0;
+      gaps_workspaces = 0;
 
       border_size = 0;
       col = {
         active_border = "0xffff00000";
       };
       
-      layout = "dwindle";
+      layout = "scrolling";
       
       resize_on_border = false;      
       allow_tearing = true;
@@ -32,7 +33,7 @@
 
     config.decoration = {
       rounding = 0;
-      rounding_power = 4;
+      # rounding_power = 2;
       
       fullscreen_opacity = 1;
       active_opacity = 1;
@@ -83,9 +84,9 @@
 
     
 
-    # misc = {
-    #   disable_hyprland_logo = true;
-    # };
+    config.misc = {
+      disable_hyprland_logo = true;
+    };
 
   };
 

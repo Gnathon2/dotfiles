@@ -19,8 +19,9 @@
       };
     
       scrolling = {
-        direction = "down";
-        column_width = 0.9;
+        direction = "right";
+        column_width = 1;
+        follow_focus = false;
       };
     };
   };
