@@ -1,0 +1,6 @@
+[submodule "home-manager/shell/CAELESTIA/shell"]
+	path = home-manager/shell/CAELESTIA/shell
+	url = gnathub:caelestia-dots/shell
+[submodule "home-manager/shell/CAELESTIA/cli"]
+	path = home-manager/shell/CAELESTIA/cli
+	url = gnathub:caelestia-dots/cli
