@@ -20,8 +20,9 @@
     
       scrolling = {
         direction = "right";
-        column_width = 1;
+        column_width = 0.99;
         follow_focus = false;
+        focus_fit_method = 0;
       };
     };
   };

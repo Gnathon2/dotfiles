@@ -13,6 +13,7 @@
     ./video.nix
     ./gaming.nix
 
+    ./shell
     # ./noctalia.nix
   ];
 

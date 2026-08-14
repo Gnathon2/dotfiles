@@ -14,10 +14,12 @@
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
-    hyprlauncher = {
-      url = "github:hyprwm/hyprlauncher";
-      inputs.hyprland.follows = "hyprland";
-    };
+    
+    # hyprlauncher = {
+    #   url = "github:hyprwm/hyprlauncher";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
+
     hyprshutdown = {
       url = "github:hyprwm/hyprshutdown";
       inputs.hyprland.follows = "hyprland";
@@ -36,7 +38,16 @@
     
     # glide.url = "github:glide-browser/glide.nix";
 
-    shell.url = "./shell";
+    # shell.url = "./shell";
+
+    caelestia-shell = {
+      url = "path:/home/hypruser/CAELESTIA/shell";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
+    caelestia-cli = {
+      url = "path:/home/hypruser/CAELESTIA/cli";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
     
 
   };
@@ -47,12 +58,14 @@
     home-manager,
     hyprland,
     hyprland-plugins,
-    hyprlauncher,
+    # hyprlauncher,
     hyprshutdown,
     hyprpaper,
     catppuccin,
     zen-browser,
-    shell,
+    caelestia-shell,
+    caelestia-cli,
+    # shell,
     # glide, 
     ...
   }:
@@ -70,7 +83,7 @@
           catppuccin.homeModules.catppuccin
           # { nixpkgs.overlays = [ inputs.hyprpanel.overlay ];} # potentially a bad idea
 
-          shell.homeModules.default
+          # shell.homeModules.default
         ];
       };
     };

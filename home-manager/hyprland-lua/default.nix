@@ -25,7 +25,9 @@ let util = import ./lua_utils.nix {lib = lib;}; in
 
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.configType = "lua";
-  
+  wayland.windowManager.hyprland.plugins = [
+    inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprfocus
+  ];
   
   wayland.windowManager.hyprland.settings =  {
     

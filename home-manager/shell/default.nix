@@ -1,4 +1,4 @@
-{pkgs, local-inputs, ...}:
+{pkgs, inputs, ...}:
 
 {
   imports = [
