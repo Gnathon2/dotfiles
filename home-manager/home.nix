@@ -4,28 +4,20 @@
   imports = [
     ./theme.nix
     ./hyprland-lua
+    ./shell
 
-    # ./fish.nix
-    ./ghostty.nix
+    ./term
     ./zed.nix
     
     ./audio.nix
     ./video.nix
     ./gaming.nix
-
-    ./shell
-    # ./noctalia.nix
   ];
 
   home.packages = with pkgs; [
-    kitty    
-    discord
-    # betterdiscordctl # just an installer | discord is still needed
-    # graphviz
-    # geogebra
-    # dmenu-wayland
-    # cool-retro-term
-    
+    kitty 
+    nautilus
+
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     (vivaldi.override {
       proprietaryCodecs = true;
@@ -33,9 +25,15 @@
     })
     # inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
 
+    
+    discord
+    # betterdiscordctl # just an installer | discord is still needed
+    # geogebra
+    # dmenu-wayland
+    
+    
     # clipse
     # celluloid
-
     # yt-dlp
   ];
 
