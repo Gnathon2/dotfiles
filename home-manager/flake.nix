@@ -41,13 +41,15 @@
     # shell.url = "./shell";
 
     caelestia-shell = {
-      url = "path:/home/hypruser/CAELESTIA/shell";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      url = "git+file:///home/hypruser/CAELESTIA/shell";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     caelestia-cli = {
-      url = "path:/home/hypruser/CAELESTIA/cli";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      url = "git+file:///home/hypruser/CAELESTIA/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    
     
 
   };
@@ -65,7 +67,6 @@
     zen-browser,
     caelestia-shell,
     caelestia-cli,
-    # shell,
     # glide, 
     ...
   }:

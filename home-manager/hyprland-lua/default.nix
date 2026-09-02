@@ -37,7 +37,8 @@ let util = import ./lua_utils.nix {lib = lib;}; in
     
     on = [
       (util.on_start "hyprctl setcursor custom 39")
-      (util.on_start "caelestia shell")
+      # (util.on_start "caelestia shell")
+      (util.on_start "hyprlock")
     ];
     
   
@@ -47,15 +48,16 @@ let util = import ./lua_utils.nix {lib = lib;}; in
       { match.class = ".*"; suppress_event = "maximize"; name = "suppress-maximize-event"; }
       #   # idle_inhibit = "fullsceen";
       # }
-      { match.class = "i?:picture-in-picture"; float = true; }
-      { match.class = "Matplotlib"; float = true; }
+      { match.class = "i?picture-in-picture"; float = true; }
+      { match.class = "i?matplotlib.*"; float = true; }
       { match.class = ".*mpv.*"; pin = true; float = true; }
+      { match.class = "i?kitty"; float = true; }
 
-      { match.class = "i?dev.zed.*"; workspace = "3"; }
-      { match.class = "i?:zen.*"; workspace = "5"; }
-      { match.class = "i?:obsidian"; workspace = "6"; }
-      { match.class = "i?:discord.*"; workspace = "9"; }
-      { match.class = "i?:spotify.*"; workspace = "music"; }
+      { match.class = "i?dev.zed.*"; workspace = "2"; }
+      { match.class = "i?zen.*"; workspace = "3"; }
+      { match.class = "i?discord.*"; workspace = "zero"; }
+      { match.class = "i?spotify.*"; workspace = "music"; }
+      
     ];
 
     monitor = {
