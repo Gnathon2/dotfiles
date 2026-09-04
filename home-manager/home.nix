@@ -12,6 +12,8 @@
     ./audio.nix
     ./video.nix
     ./gaming.nix
+
+    ./direnv.nix
   ];
 
   home.packages = with pkgs; [
@@ -59,18 +61,6 @@
   #   enable = true;
   # };
 
-
-  programs.bash.enable = false; # mandotory for shell aliases
-
-  home.shellAliases = {
-    bn = "hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'";
-    re = "hyprshutdown -t 'Restarting...' --post-cmd 'reboot'";
-
-    papier = "ghostty --class=pap.er -e";
-    stream = "streamlink --player mpv";
-    streambg = "streamlink --player mpv --player-args '--wayland-app-id=pap.er'";
-    marex = "streamlink --player mpv twitch.tv/marex";
-  };
 
 
   home.sessionVariables = {

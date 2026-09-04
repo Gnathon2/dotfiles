@@ -37,8 +37,6 @@
     git
   ];
 
-  programs.direnv.enable = true;
-  programs.direnv.nix-direnv.enable = true;
 
   fonts.packages = with pkgs; [
     font-awesome
