@@ -1,19 +1,25 @@
-{...}:
+{lib, ...}:
+
+let util = import ../lua_utils.nix {lib = lib;}; in
 {
   imports = [
-    ./workspace.nix
-    ./system.nix
     ./apps.nix
+    ./hardware.nix
+    ./windows.nix
   ];
 
   wayland.windowManager.hyprland.settings = {
-    bind = [
-      "SUPER, Escape, killactive"
-      "CONTROL SUPER ALT, Escape, exit" # kill hyprland
-      "SUPER, A, exec, kitty"
+    bind = map util.bind [
+      { key = "SUPER + A";      dsp = util.arg "exec_cmd" "kitty"; }
+      { key = "SUPER + Escape"; dsp = "window.close()"; }
     ];
-    gesture = [
-      
-    ];
+
+    config.binds = {
+      allow_workspace_cycles = true;
+    };
+
+    config.gestures = {
+      workspace_swipe_forever = false;
+    };
   };
 }

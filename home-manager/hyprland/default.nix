@@ -1,20 +1,20 @@
-{ inputs, pkgs, ...}:
+{ inputs, pkgs, lib, ...}:
 
+
+let util = import ./lua_utils.nix {lib = lib;}; in
 {
-
   imports = [
     ./hyprbind
     ./theme-minimal
+    ./layout.nix
 
     # ./hyprexpo.nix
-    ./hypridle.nix
-    # ./hyprscrolling.nix
+    # ./hypridle.nix
     ./hyprsunset.nix
     # ./hyprwinwrap.nix 
   ];
 
   home.packages = with pkgs; [
-    inputs.hyprpanel.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.hyprshutdown.packages.${pkgs.stdenv.hostPlatform.system}.default
     hyprlauncher
     hyprshot
@@ -24,92 +24,99 @@
 
 
   wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.configType = "hyprlang";
-  
+  wayland.windowManager.hyprland.configType = "lua";
+  wayland.windowManager.hyprland.plugins = [
+    inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprfocus
+  ];
   
   wayland.windowManager.hyprland.settings =  {
+    
     # debug = {
     #   disable_logs = false;
     # };
-
-    monitor = [
-      "eDP-1,preferred, auto, 1"
-      "HDMI-A-1, preferred, auto, 1, mirror, eDP-1" # duplicate
-      ", preferred, auto, 1"
+    
+    on = [
+      (util.on_start "hyprctl setcursor custom 39")
+      (util.on_start "caelestia shell -d && calestia shell lock lock")
+      # (util.on_start "hyprlock")
     ];
     
+  
+    window_rule = [
+      # tricks:  (?i:re) case insensitive
+       
+      { match.class = ".*"; suppress_event = "maximize"; name = "suppress-maximize-event"; }
+      #   # idle_inhibit = "fullsceen";
+      # }
+      { match.class = "i?picture-in-picture"; float = true; }
+      { match.class = "i?matplotlib.*"; float = true; }
+      { match.class = ".*mpv.*"; pin = true; float = true; }
+      { match.class = "i?kitty"; float = true; }
 
-    exec-once = [
-      # "hyprpanel"monitor=eDP-1, 2560x1600@60, 0x0, 1
-      "hyprctl setcursor custom 39"
-      "hypridle"
-      "noctalia"
+      { match.class = "i?dev.zed.*"; workspace = "2"; }
+      { match.class = "i?zen.*"; workspace = "3"; }
+      { match.class = "i?discord.*"; workspace = "zero"; }
+      { match.class = "i?spotify.*"; workspace = "music"; }
+      
     ];
 
-    windowrule = [
-      # tricks
-      # (?i:re) case insensitive
-
-
-      "suppress_event maximize, match:class .*"
-      # "idleinhibit fullscreen, match:class .*"
-
-      "float on, content video, match:class Picture-in-Picture"
-      "float on, match:class Matplotlib"
-      "float on, pin on, content video, match:class .*mpv.*"
-      "float on, match:class Qemu.*"
-
-      "float on, stay_focused on, match:class (?:code), match:title ^Open\sfile"
-
-      # "workspace 4, match:class (?i:code), match:title negative:(?i:open)|.*.config|.*TNCY.*"
-      "workspace 5, match:class (?i:zen.*)"
-      "workspace 6, match:class (?i:obsidian)"
-      "workspace 9, match:class (?i:discord)"
-      "workspace music, match:class (?i:spotify)"
-    ];
-
-
-    cursor = {
-      enable_hyprcursor = false;
+    monitor = {
+      output = "";
+      mode = "preferred";
+      position = "auto";
+      scale = "1";
     };
 
-    env = [
-      "XCURSOR_THEME,bibata"
-      "XCURSOR_SIZE,18"
-      "HYPRCURSOR_THEME,bibata"
-      "HYPRCURSOR_SIZE,18"
-    ];
-    
-
-    dwindle = {
-      # pseudotile = true;
-      preserve_split = true;
-    };
-
-    # misc = {
-    #   vfr = true;
-    # };
-
-    master = {
-      new_status = "slave";
-      new_on_active = "after";
-      allow_small_split = "false";
-    };
-
-    input = {
+    config.input = {
       kb_layout = "fr";
       numlock_by_default = true;
       follow_mouse = 1; #focus
-      sensitivity = -0.2;
+      # sensitivity = -0.2;
       touchpad = {
         scroll_factor = 0.2;
         natural_scroll = true;
       };
-    };
+    };   
 
-    #device = {
-    #  name = "steelseries-steelseries-rival-3";
-    #  sensitivity = -.8;
-    #};
+
+    # config.cursor = {
+    #   enable_hyprcursor = false;
+    # };
+
+    # env = [
+    #   "XCURSOR_THEME,bibata"
+    #   "XCURSOR_SIZE,18"
+    #   "HYPRCURSOR_THEME,bibata"
+    #   "HYPRCURSOR_SIZE,18"
+    # ];
+    
+
+    config.xwayland = {
+      force_zero_scaling = true;
+    };
+    
+    config.opengl.nvidia_anti_flicker = false;
+
+    config.ecosystem = {
+      no_update_news = true;
+      no_donation_nag = true;
+    };
+    
+  };
+
+  wayland.windowManager.hyprland.extraLuaFiles = {
+    # "base".content = ./default.lua;
+    "func".content = ''
+      function toggle_layout()
+        local current_layout = hl.get_config("general.layout")
+          
+        if current_layout == "dwindle" then
+            hl.config({ general = { layout = "scrolling" } })
+        else
+            hl.config({ general = { layout = "dwindle" } })
+        end
+      end 
+    '';
   };
 }
+

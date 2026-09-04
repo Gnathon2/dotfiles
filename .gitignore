@@ -1,7 +1,6 @@
 **/*.lock
 secret/
 
-.gitignore
 delink.sh
 
 BetterDiscord/
@@ -10,6 +9,7 @@ btop/
 cava/
 Code/
 dconf/
+direnv
 discord/
 Electron/
 ensemble*/

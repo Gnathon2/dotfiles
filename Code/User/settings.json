@@ -74,5 +74,6 @@
         }
     },
     "editor.unicodeHighlight.nonBasicASCII": false,
-    "catppuccin.customUIColors": {}
+    "catppuccin.customUIColors": {},
+    "workbench.startupEditor": "none"
 }

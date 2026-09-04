@@ -3,7 +3,7 @@
 {
   imports = [
     ./theme.nix
-    ./hyprland-lua
+    ./hyprland
     ./shell
 
     ./term

@@ -28,6 +28,11 @@
             "shown": 5
         }
     },
+    "border": {
+        "rounding": 0,
+        "smoothing": 0,
+        "thickness": 0
+    },
     "dashboard": {
         "enabled": true,
         "resourceUpdateInterval": 2000,
