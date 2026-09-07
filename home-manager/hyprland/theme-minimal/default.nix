@@ -5,7 +5,7 @@
     ./animations.nix
     
     ./hyprpaper.nix
-    ./hyprlock.nix
+    # ./hyprlock.nix
     # ./hyprpanel.nix
   ];
   wayland.windowManager.hyprland.settings = {

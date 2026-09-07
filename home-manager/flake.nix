@@ -38,7 +38,6 @@
     
     # glide.url = "github:glide-browser/glide.nix";
 
-    # shell.url = "./shell";
 
     caelestia-shell = {
       url = "git+file:///home/hypruser/CAELESTIA/shell";

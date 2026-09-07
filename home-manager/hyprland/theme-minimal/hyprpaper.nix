@@ -22,7 +22,7 @@ let util = import ../lua_utils.nix {lib = lib;}; in
           recursive = true;
         };
       in [
-        (wp "wallpaper/")
+        (wp "Wallpapers/")
       ];
     };
   };

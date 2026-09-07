@@ -7,13 +7,12 @@
     ./shell
 
     ./term
-    ./zed.nix
+    ./dev
     
     ./audio.nix
     ./video.nix
     ./gaming.nix
 
-    ./direnv.nix
   ];
 
   home.packages = with pkgs; [
