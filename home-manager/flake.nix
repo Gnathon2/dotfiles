@@ -41,10 +41,12 @@
 
     caelestia-shell = {
       url = "git+file:///home/hypruser/CAELESTIA/shell";
+      # url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     caelestia-cli = {
-      url = "git+file:///home/hypruser/CAELESTIA/cli";
+      # url = "git+file:///home/hypruser/CAELESTIA/cli";
+      url = "github:caelestia-dots/cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

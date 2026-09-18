@@ -6,6 +6,7 @@
     ./hardware-configuration.nix # Include the results of the hardware scan.
 
     ./audio.nix
+    ./fprint.nix
     ./gaming.nix
     ./hyprland.nix
     ./tncy.nix
@@ -48,32 +49,14 @@
   ];
 
 
-  # virtualisation.docker.enable = true;
-
-
-  services.upower.enable = true; # needed for hyprpanel
-
-  boot.extraModprobeConfig = ''
-    options snd-hda-intel model=ideapad
-  ''; # wtf is that ?
-
-  ## fingerprint
-  systemd.services.fprintd = {
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig.Type = "simple";
-  };
-
-  services.fprintd = {
-    enable = true;
-    # tod.enable = true;
-    # tod.driver = pkgs.libfprint-2-tod1-goodix-550a;
-  };
+  services.upower.enable = true; # needed for shells
 
   programs.bash.shellAliases = {
     ## system
     kys = "shutdown 0";
     tg = "systemctl suspend";
 
+    # dual boot
     wount = "sudo mount /dev/nvme0n1p3 /mnt/win";
     uwount = "sudo umount /mnt/win";
 
@@ -83,7 +66,7 @@
 
     nxpoubelle = "sudo nix-collect-garbage";
     nxcg = "sudo nix-collect-garbage -d";
-    nxclean = '' home-manager expire-generations "-1 hour"
+    nxclean = '' home-manager expire-generations "-now"
       nix profile wipe-history 
       sudo nix-collect-garbage -d
       nix store optimise'';
@@ -98,8 +81,6 @@
 
     nxhome = "home-manager";
     nxhm = "home-manager switch -b backup";
-
-    vpn = "sudo openconnect -u e11726u@etu --authgroup='Universite-de-Lorraine' vpn.univ-lorraine.fr";
   };
 
   # FLAKE

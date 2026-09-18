@@ -16,7 +16,7 @@ let util = import ../lua_utils.nix {lib = lib;}; in
       wallpaper = let
         wp = name: {
           monitor = "";
-          path = "~/.config/media/" + name;
+          path = "~/.config/home-manager/media/" + name;
           order = "random";
           timeout = 3600;
           recursive = true;

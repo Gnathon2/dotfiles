@@ -7,20 +7,24 @@
   ];
 
   
-  home.file."~/.config/caelestia/shell.json".source = 
-  let 
-    jsonFormat = pkgs.formats.json {};
-  in jsonFormat.generate "caelestia.json" {
+  home.file.".config/caelestia/shell.json" = {
+    force = true;
+    source = 
+    let 
+      jsonFormat = pkgs.formats.json {};
+    in jsonFormat.generate "caelestia-shell.json" {
 
+    enabled = true;
+      
     appearance = {
-      transparancy = {
-        enabled = true;
+      transparency = {
+        enabled = false;
       };
     };
     
     background = {
       enabled = false;
-      wallpaperEnabled = false;
+      wallpaperEnabled = true;
     }; 
 
     bar = {
@@ -39,20 +43,21 @@
         occupiedBg = true;
         perMonitorWorkspaces = true;
         showWindows = false;
-        showWindowsOnSpeciaWorkspaces = true;
+        showWindowsOnSpecialWorkspaces = true;
         shown = 5;
       };
     };
 
     border = {
       rounding = 0;
-      smouthing = 0;
-      thickness = 0;
+      smoothing = 0;
+      thickness = 2;
     };
 
     dashboard = {
       enabled = true;
       resourceUpdateInterval = 2000;
+      showDashboard = false;
       showOnHover = false;
       showWeather = false;
     };
@@ -70,17 +75,17 @@
       };
       
       idle = {
-        
         timeouts = [
           {
             timeout = 300;
             idleAction = "lock";
             inhibitWhenAudio = false;
+            respectInhibitors = true;
           }
           {
-              timeout = 300;
-              idleAction = "dpms off";
-              returnAction = "dpms on";
+            timeout = 300;
+            idleAction = "dpms off";
+            returnAction = "dpms on";
           }
         ];
       };
@@ -101,6 +106,7 @@
     sidebar = {
       enabled = false;
     };
+  };
   };
   
   # programs.caelestia = {

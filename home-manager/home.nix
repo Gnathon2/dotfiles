@@ -17,7 +17,9 @@
 
   home.packages = with pkgs; [
     kitty 
-    nautilus
+    
+    nautilus # super mega super cool file manager (gnome)
+    baobab # super mega super cool disk analyzer (gnome)
 
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".default
     (vivaldi.override {

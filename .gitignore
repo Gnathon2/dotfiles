@@ -6,6 +6,8 @@ delink.sh
 BetterDiscord/
 bluetuith/
 btop/
+cabal/
+caelestia/
 cava/
 Code/
 dconf/
@@ -23,6 +25,7 @@ geogebra/
 ghostty/
 github-copilot/
 glide/
+Google/
 google-chrome/
 gtk*/
 htop/
