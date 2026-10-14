@@ -8,7 +8,7 @@
     ./audio.nix
     ./fprint.nix
     ./gaming.nix
-    ./hyprland.nix
+    # ./hyprland.nix
     ./tncy.nix
 
   ];
@@ -25,8 +25,6 @@
 
     unzip
     zip
-    nix-index
-    ncdu # tree du
     # poppler-utils # ?
     btop # task manager
     # nnn # file explorer
@@ -36,12 +34,30 @@
     bluetuith
 
     git
+
+    nix-index
+    ncdu # tree du
+    nix-tree
+    inputs.nix-viz.packages.${stdenv.hostPlatform.system}.nix-visualize
+    nix-du
   ];
 
+  programs.bash = {
+    promptInit = ''
+      export PS1="\\n\[\e[1;32m\\]\w \\$ \[\e[0m\]"
+    '';
+    shellInit = ''
+      if [ -f ~/.bashrc_local ]; then 
+        source ~/.bashrc_local
+      fi
+    '';
+  };
 
   fonts.packages = with pkgs; [
     font-awesome
     nerd-fonts.symbols-only
+    dejavu_fonts
+    freefont_ttf
     # nerd-fonts
     # nerd-fonts._3270
     # nerd-fonts.terminess-ttf
