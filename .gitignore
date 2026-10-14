@@ -2,7 +2,9 @@
 secret/
 
 delink.sh
+user-dirs.*
 
+ardour8/
 BetterDiscord/
 bluetuith/
 btop/
