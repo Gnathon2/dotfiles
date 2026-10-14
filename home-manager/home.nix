@@ -28,6 +28,7 @@
     })
     # inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
 
+    firefox
     
     discord
     # betterdiscordctl # just an installer | discord is still needed

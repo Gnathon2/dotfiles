@@ -75,5 +75,9 @@
     },
     "editor.unicodeHighlight.nonBasicASCII": false,
     "catppuccin.customUIColors": {},
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "*.pdf": "default"
+    }
 }

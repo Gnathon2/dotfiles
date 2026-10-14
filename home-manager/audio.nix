@@ -6,8 +6,6 @@
     sonic-pi
   ];
 
-  
-
   programs.cava = {
     enable = true;
   };

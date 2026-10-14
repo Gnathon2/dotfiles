@@ -2,6 +2,7 @@
 let util = import ../lua_utils.nix {lib = lib;}; in
 let TUI = "ghostty -e"; in
 let IDE = "zeditor"; in
+let WOUNT = "bash -c sudo mount /dev/nvme0n1p3 /mnt/win"; in
 let dspexc = cmd : util.arg "exec_cmd" cmd; in
 {
   wayland.windowManager.hyprland.settings = {
@@ -21,7 +22,7 @@ let dspexc = cmd : util.arg "exec_cmd" cmd; in
       {key = "SUPER + T"; dsp = dspexc "${TUI} twt"; }
       {key = "SUPER + I"; dsp = dspexc "${IDE} ~/.config"; } #(F9)
       # {key = "SUPER + O"; dsp = dspexc "${TUI} $wount && obsidian || obsidian"; }
-      # {key = "SUPER + O"; dsp = dspexc "${TUI} $wount && code ~/Public/Documents/TNCY || code ~/Public/Documents/TNCY"; }
+      {key = "SUPER + O"; dsp = dspexc "${WOUNT} && ${IDE} tncy || ${IDE} tncy"; }
       {key = "SUPER + P"; dsp = dspexc "code ~/contest"; }
 
       {key = "SUPER + Q"; dsp = dspexc "ghostty"; }

@@ -50,7 +50,7 @@ let util = import ./lua_utils.nix {lib = lib;}; in
     
       { match.class = "i?picture-in-picture"; float = true; }
       { match.class = "i?matplotlib.*"; float = true; }
-      { match.class = ".*mpv.*"; pin = true; float = true; }
+      # { match.class = ".*mpv.*"; pin = true; float = true; }
       { match.class = "i?kitty"; float = true; }
 
       { match.class = "i?dev.zed.*"; workspace = "2"; }

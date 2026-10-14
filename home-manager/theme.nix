@@ -29,7 +29,7 @@
 
   gtk = {
     enable = true;
-    colorScheme = "dark";
+    colorScheme = "light";
 
     # theme = {
     #   package = pkgs.flat-remix-gtk;

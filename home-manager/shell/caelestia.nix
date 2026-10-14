@@ -23,7 +23,7 @@
     };
     
     background = {
-      enabled = false;
+      enabled = true;
       wallpaperEnabled = true;
     }; 
 
