@@ -11,7 +11,7 @@
     musnix  = { url = "github:musnix/musnix"; };
     # nixpkgs-python.url = "github:cachix/nixpkgs-python";
 
-    # hyprland-plugins.url = "github:Hyprland/Hyprland-plugins?ref=main";    
+    nix-viz.url = "github:craigmbooth/nix-visualize";
   };
 
   outputs = { 
@@ -31,6 +31,17 @@
         modules = [
           inputs.musnix.nixosModules.musnix
           ./configuration.nix
+          ./hyprland.nix
+        ];
+      };
+
+      xmateur = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          inputs.musnix.nixosModules.musnix
+          ./configuration.nix
+          ./xfce.nix
         ];
       };
     };
