@@ -12,7 +12,7 @@
         "tlaplus_cfg": true
     },
     "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "Catppuccin Latte",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "git.confirmSync": false,
     "editor.fontSize": 20,
     "window.menuBarVisibility": "compact",
@@ -22,7 +22,7 @@
     "cph.general.timeOut": 30000,
     "git.ignoreRebaseWarning": true,
     "workbench.editor.editorActionsLocation": "titleBar",
-    "workbench.iconTheme": "catppuccin-latte",
+    "workbench.iconTheme": "catppuccin-mocha",
     "chat.viewSessions.orientation": "stacked",
     "debug.console.fontSize": 16,
     "terminal.integrated.fontSize": 16,

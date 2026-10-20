@@ -34,16 +34,6 @@
           ./hyprland.nix
         ];
       };
-
-      xmateur = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          inputs.musnix.nixosModules.musnix
-          ./configuration.nix
-          ./xfce.nix
-        ];
-      };
     };
   };
 }

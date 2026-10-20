@@ -6,10 +6,13 @@
     ./hardware-configuration.nix # Include the results of the hardware scan.
 
     ./audio.nix
+    ./bash.nix
     ./fprint.nix
     ./gaming.nix
-    # ./hyprland.nix
+    ./hyprland.nix
     ./tncy.nix
+
+    ./xfce.nix
 
   ];
 
