@@ -1,12 +1,9 @@
 {...}:
-{
 
+{
   imports = [
     ./animations.nix
-    
-    ./hyprpaper.nix
-    # ./hyprlock.nix
-    # ./hyprpanel.nix
+    ./layout.nix
   ];
   wayland.windowManager.hyprland.settings = {
 
