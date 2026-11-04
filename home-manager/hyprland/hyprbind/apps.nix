@@ -7,7 +7,7 @@ let dspexc = cmd : util.arg "exec_cmd" cmd; in
 {
   wayland.windowManager.hyprland.settings = {    
     bind = map util.bind [
-      {key = " + XF86Assistant"; dsp = dspexc "caelestia shell drawers toggle launcher"}
+      {key = " + XF86Assistant"; dsp = dspexc "caelestia shell drawers toggle launcher"; }
       {key = " + XF86Calculator"; dsp = dspexc "${TUI} bc"; } #(F12)
       {key = " + XF86Cut"; dsp = dspexc "hyprshot -o ~/Pics/screenshots -m region"; }
       {key = "SHIFT + XF86Cut"; dsp = dspexc "hyprshot -o ~/Pics/screenshots -m window"; }

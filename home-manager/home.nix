@@ -12,11 +12,12 @@
     ./audio.nix
     ./video.nix
     ./gaming.nix
-
   ];
 
   home.packages = with pkgs; [
     kitty 
+    firefox
+    
     
     nautilus # super mega super cool file manager (gnome)
     baobab # super mega super cool disk analyzer (gnome)
@@ -27,10 +28,8 @@
       enableWidevine = false;  
     })
     # inputs.glide.packages.${pkgs.stdenv.hostPlatform.system}.default
-
-    firefox
     
-    discord
+    # discord
     # betterdiscordctl # just an installer | discord is still needed
     # geogebra
     # dmenu-wayland
@@ -48,6 +47,7 @@
   programs.btop = {
     enable = true;
     settings = {
+      color_theme = "caelestia";
       theme_background = false;
       true_color = true;
     };

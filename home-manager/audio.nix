@@ -4,6 +4,7 @@
     spotify
     # supercollider
     sonic-pi
+    reaper
   ];
 
   programs.cava = {

@@ -10,10 +10,11 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+    
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
     
     # hyprlauncher = {
     #   url = "github:hyprwm/hyprlauncher";
@@ -24,24 +25,21 @@
       url = "github:hyprwm/hyprshutdown";
       inputs.hyprland.follows = "hyprland";
     };
-    hyprpaper = {
-      url = "github:hyprwm/hyprpaper";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprpaper = {
+    #   url = "github:hyprwm/hyprpaper";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
 
 
     catppuccin.url = "github:catppuccin/nix";
 
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
-
-    
-    
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";    
     # glide.url = "github:glide-browser/glide.nix";
 
 
     caelestia-shell = {
-      url = "git+file:///home/hypruser/caelestia/shell";
-      # url = "github:caelestia-dots/shell";
+      # url = "git+file:///home/hypruser/caelestia/shell";
+      url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     caelestia-cli = {
@@ -56,10 +54,10 @@
     nixpkgs,
     home-manager,
     hyprland,
-    hyprland-plugins,
+    # hyprland-plugins,
     # hyprlauncher,
     hyprshutdown,
-    hyprpaper,
+    # hyprpaper,
     catppuccin,
     zen-browser,
     caelestia-shell,
