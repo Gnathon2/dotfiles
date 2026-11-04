@@ -3,7 +3,7 @@
 {
 
   wayland.windowManager.hyprland.settings = {
-    config =  {
+    config = {
       # layout = {};
     
       dwindle = {

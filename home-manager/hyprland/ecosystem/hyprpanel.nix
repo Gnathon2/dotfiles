@@ -1,7 +1,7 @@
 { inputs, pkgs, ... } :
 
 let
-  couleur = import ./colors.nix;
+  couleur = import ../colors.nix;
 in let
   colors = {
     background = couleur.black;

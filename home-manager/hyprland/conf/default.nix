@@ -4,6 +4,7 @@
   imports = [
     ./animations.nix
     ./layout.nix
+    ./windowrules.nix
   ];
   wayland.windowManager.hyprland.settings = {
 
@@ -74,17 +75,9 @@
       };
     };
 
-    config.animations = {
-      enabled = true;
-      workspace_wraparound = true;
-    };
-
-    
-
     config.misc = {
       disable_hyprland_logo = true;
     };
-
   };
 
 }

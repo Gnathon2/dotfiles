@@ -3,6 +3,9 @@
 {
   imports = [
     ./hypridle.nix
+    # ./hyprlock.nix
+    # ./hyprpanel.nix
+    # ./hyprpaper.nix
     ./hyprsunset.nix
   ];
 
