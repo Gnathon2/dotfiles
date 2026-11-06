@@ -5,7 +5,7 @@
 home.pointercursos deja pas mal
 accurse pour personaliser (c'est bien doc)
 
-reste juste à assure que hyprcurseur est le meem 
+reste juste à assure que hyprcurseur est le meme
 puis debugger
 
 sur la doc hypr ça parle de gtk (cringe)

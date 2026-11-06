@@ -13,7 +13,6 @@
     ./tncy.nix
 
     ./xfce.nix
-
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -23,6 +22,7 @@
     neofetch # distro logo
     lshw # info hardware
     xorg.xev # inputs
+    xorg.xhost
     pulseaudio # pactl
     playerctl # media actions
 
@@ -57,7 +57,7 @@
     # nerd-fonts.symbols-only
   ];
 
-
+  programs.nix-ld.enable = true;
   services.upower.enable = true; # needed for shells
 
   # FLAKE
@@ -73,7 +73,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "systmateur"; # nom de la machine systmateur mieux non?
+  networking.hostName = "systmateur";
 
   networking.networkmanager.enable = true;
 

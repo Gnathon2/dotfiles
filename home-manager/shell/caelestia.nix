@@ -104,7 +104,7 @@
     # services = {};
 
     sidebar = {
-      enabled = false;
+      enabled = true;
     };
   };
   };

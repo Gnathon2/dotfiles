@@ -7,7 +7,7 @@ let dspexc = cmd : util.arg "exec_cmd" cmd; in
 {
   wayland.windowManager.hyprland.settings = {    
     bind = map util.bind [
-      {key = " + XF86Assistant"; dsp = dspexc "caelestia shell drawers toggle launcher"; }
+      {key = " + XF86Assistant"; dsp = dspexc ""; }
       {key = " + XF86Calculator"; dsp = dspexc "${TUI} bc"; } #(F12)
       {key = " + XF86Cut"; dsp = dspexc "hyprshot -o ~/Pics/screenshots -m region"; }
       {key = "SHIFT + XF86Cut"; dsp = dspexc "hyprshot -o ~/Pics/screenshots -m window"; }
@@ -21,7 +21,7 @@ let dspexc = cmd : util.arg "exec_cmd" cmd; in
       {key = "SUPER + T"; dsp = dspexc "${TUI} twt"; }
       {key = "SUPER + I"; dsp = dspexc "${IDE} ~/.config"; } #(F9)
       # {key = "SUPER + O"; dsp = dspexc "${TUI} $wount && obsidian || obsidian"; }
-      {key = "SUPER + O"; dsp = dspexc "${WOUNT} && ${IDE} tncy || ${IDE} tncy"; }
+      {key = "SUPER + O"; dsp = dspexc "${TUI} ${WOUNT} && ${IDE} ~/tncy || ${IDE} tncy"; }
       {key = "SUPER + P"; dsp = dspexc "code ~/contest"; }
 
       {key = "SUPER + Q"; dsp = dspexc "ghostty"; }
@@ -32,13 +32,16 @@ let dspexc = cmd : util.arg "exec_cmd" cmd; in
       {key = "SUPER + L"; dsp = dspexc "caelestia shell lock lock"; }
       # {key = "SUPER + M"; dsp = dspexc "ghostty --class=pap.er -e cava"; }
 
-      # "SUPER, W, exec, dmenu-wl_run"
-      {key = "SUPER + W"; dsp = dspexc "rofi -show drun"; }
+      # {key = "SUPER + W"; dsp = dspexc "rofi -show drun"; }
+      {key = "SUPER + W"; dsp = dspexc "caelestia shell drawers toggle launcher"; }
       {key = "SUPER + X"; dsp = dspexc "zeditor"; }
       {key = "SUPER + C"; dsp = dspexc "code"; }
       {key = "SUPER + V"; dsp = dspexc "vivaldi"; }
-      # {key = "SUPER + B"; dsp = dspexc ""; }
-      {key = "SUPER + N"; dsp = dspexc "${TUI} nano ./notes.txt"; }
+      {key = "SUPER + B"; dsp = dspexc "caelestia shell drawers toggle bar"; }
+      {key = "SUPER + N"; dsp = dspexc "caelestia shell drawers toggle sidebar"; }
+
+      {key = "SUPER + space"; dsp = dspexc "caelestia shell drawers toggle dashboard"; }
+      # {key = "SUPER + enter"; dsp = dspexc "${TUI} ~/notes.txt"; }
     ];
   };
 }
